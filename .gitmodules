@@ -1,0 +1,15 @@
+[submodule "source/cor3.parsers"]
+	path = source/cor3.parsers
+	url = https://github.com/tfoxo/cor3.par
+	branch = master
+[submodule "source/cor3.data"]
+	path = source/cor3.data
+	url = https://github.com/tfoxo/cor3.data
+	branch = master
+[submodule "source/cor3.core"]
+	path = source/cor3.core
+	url = https://github.com/tfoxo/cor3.core
+	branch = master
+[submodule "source/cor3.stock"]
+	path = source/cor3.stock
+	url = https://github.com/tfoxo/cor3.stock
