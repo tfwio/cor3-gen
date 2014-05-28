@@ -1,0 +1,144 @@
+﻿<?xml version="1.0"?>
+<SyntaxDefinition name="SQL" extensions=".sql;.tsql" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
+
+	<Color name="LineComment"		foreground="#006400" />
+	<Color name="BlockComment"		foreground="#006400" />
+	<Color name="Character"			foreground="#a0522d" />
+	<Color name="String"			foreground="#a0522d" />
+	<Color name="SqlKeyWords"		foreground="#ffd700" />
+	<Color name="SqlActionWords"	foreground="#0000ff" />
+	<Color name="SqlTypes"			foreground="#0000ff" />
+	<Color name="SqlObjects"		foreground="#0000ff" />
+	<Color name="TSql"				foreground="#00008b" />
+	<Color name="Punctuation"		foreground="#2f4f4f" />
+	<Color name="Operators"			foreground="#a9a9a9" />
+	<Color name="Functions"			foreground="#8b0000" />
+
+	<RuleSet ignoreCase="true">
+
+		<!--<Delimiters>=!&gt;&lt;+-/*%&amp;|^~.}{,;][?:()</Delimiters>-->
+		<Span color="LineComment" begin="--" multiline="false" />
+		<Span color="BlockComment" multiline="true">
+			<Begin>/\*</Begin>
+			<End>\*/</End>
+		</Span>
+		<Span color="Character" begin="&apos;" end="&apos;" multiline="true" />
+		<Span color="String" begin="&quot;" end="&quot;" multiline="true" />
+
+		<Keywords color="SqlKeyWords">
+			<Word>from</Word>
+			<Word>where</Word>
+			<Word>in</Word>
+			<Word>on</Word>
+			<Word>exists</Word>
+			<Word>or</Word>
+			<Word>and</Word>
+			<Word>not</Word>
+			<Word>null</Word>
+			<Word>having</Word>
+			<Word>group</Word>
+			<Word>by</Word>
+			<Word>order</Word>
+			<Word>is</Word>
+			<Word>as</Word>
+			
+			<Word>into</Word>
+			<Word>values</Word>
+			<Word>set</Word>
+			<Word>inner</Word>
+			<Word>outer</Word>
+			<Word>join</Word>
+			<Word>union</Word>
+			<Word>desc</Word>
+			<Word>asc</Word>
+			
+			<Word>go</Word>
+			<Word>commit</Word>
+			<Word>trans</Word>
+			<Word>rollback</Word>
+			<Word>transaction</Word>
+			<!-- added by me -->
+			<Word>default</Word>
+		</Keywords>
+		<Keywords color="SqlActionWords">
+			<Word>select</Word>
+			<Word>update</Word>
+			<Word>use</Word>
+			<Word>insert</Word>
+			<Word>create</Word>
+			<Word>drop</Word>
+			<Word>delete</Word>
+			<Word>truncate</Word>
+			<Word>alter</Word>
+			<Word>add</Word>
+		</Keywords>
+		<Keywords color="SqlTypes">
+			<!-- added by me -->
+			<Word>datetime</Word>
+			<!-- added by? -->
+			<Word>varchar</Word>
+			<Word>nvarchar</Word>
+			<Word>char</Word>
+			<Word>nchar</Word>
+			<Word>int</Word>
+			<Word>text</Word>
+			<Word>ntext</Word>
+			<Word>double</Word>
+			<Word>money</Word>
+			<Word>bit</Word>
+		</Keywords>
+		<Keywords color="SqlObjects">
+			<Word>table</Word>
+			<Word>proc</Word>
+			<Word>procedure</Word>
+			<Word>function</Word>
+			<Word>view</Word>
+			<Word>trigger</Word>
+			<Word>index</Word>
+			<Word>database</Word>
+		</Keywords>
+		
+		<Keywords color="TSql">
+			<Word>IF</Word>
+			<Word>ELSE</Word>
+			<Word>CASE</Word>
+			<Word>RETURN</Word>
+			<Word>END</Word>
+			<Word>DECLARE</Word>
+			
+			<Word>BEGIN</Word>
+			<Word>CASE</Word>
+			<Word>WHEN</Word>
+			<Word>END</Word>
+		</Keywords>
+		
+		<Keywords color="Punctuation">
+			<Word>(</Word>
+			<Word>)</Word>
+		</Keywords>
+		
+		<Keywords color="Operators">
+			<Word>&lt;</Word>
+			<Word>&gt;</Word>
+			<Word>=</Word>
+		</Keywords>
+		
+		<Keywords color="Functions">
+			<Word>substring</Word>
+			<Word>upper</Word>
+			<Word>lower</Word>
+			<Word>reverse</Word>
+			<Word>avg</Word>
+			<Word>min</Word>
+			<Word>max</Word>
+			<Word>replace</Word>
+			<Word>ltrim</Word>
+			<Word>rtrim</Word>
+			<Word>cast</Word>
+			<Word>sum</Word>
+			<Word>count</Word>
+		</Keywords>
+
+	</RuleSet>
+
+</SyntaxDefinition>

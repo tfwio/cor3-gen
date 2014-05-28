@@ -1,0 +1,61 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:ad="clr-namespace:AvalonDock;assembly=AvalonDock"
+	xmlns:data="clr-namespace:System.Data;assembly=System.Data">
+	
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceDictionary Source="templates.defaultcolors.xaml"/>
+		<ResourceDictionary Source="templates.defaultgradients.xaml"/>
+		<ResourceDictionary Source="templates.datagrid.xaml"/>
+		<ResourceDictionary Source="templates.datapanel.xaml"/>
+		<ResourceDictionary Source="templates.headeredcontentcontrol.xaml"/>
+	</ResourceDictionary.MergedDictionaries>
+	
+	<BooleanToVisibilityConverter x:Key="booleanToVisibilityConverter" />
+	
+	<!-- begin:common -->
+	<Style TargetType="{x:Type ListBox}">
+		<Setter Property="ItemTemplateSelector" Value="{DynamicResource local:TemplateSelector}" />
+		<Setter Property="GroupStyleSelector" Value="{DynamicResource ListGroupTemplateSelector}" />
+		<Setter Property="BorderThickness" Value="0" />
+		<!--<Setter Property="js:ListBoxExtenders.AutoScrollToCurrentItem" Value="True" />-->
+		<Setter Property="IsSynchronizedWithCurrentItem" Value="True" />
+		<!--<Setter Property="Foreground" Value="#000000" />-->
+		<!--<Setter Property="BorderThickness" Value="0" />-->
+	</Style>
+	<Style TargetType="ad:DockingManager">
+		<Setter Property="Background" Value="{x:Null}" />
+		<Setter Property="SnapsToDevicePixels" Value="True" />
+	</Style>
+	<Style TargetType="{x:Type Menu}">
+		<Setter Property="FontFamily" Value="Segoe UI" />
+		<Setter Property="FontSize" Value="11" />
+		<!--<Setter Property="FontWeight" Value="Bold" />-->
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="VerticalAlignment" Value="Stretch" />
+	</Style>
+	<!-- end:common -->
+	
+	<!-- ExpandableListBox.xaml -->
+	<Style x:Key="borderX" TargetType="Border">
+		<!--<Setter Property="Background" Value="Black" />-->
+		<Setter Property="CornerRadius" Value="7" />
+		<Setter Property="Effect">
+			<Setter.Value>
+				<DropShadowEffect BlurRadius="3" Opacity="0.5" />
+			</Setter.Value>
+		</Setter>
+	</Style>
+	
+	<Style TargetType="DockPanel">
+		<Setter Property="Background" Value="{x:Null}" />
+	</Style>
+	<Style TargetType="TabControl">
+		<Setter Property="Background" Value="{x:Null}" />
+		<Setter Property="BorderBrush" Value="{x:Null}" />
+	</Style>
+	<Style TargetType="GridSplitter">
+		<Setter Property="Background" Value="Transparent" />
+	</Style>
+</ResourceDictionary>

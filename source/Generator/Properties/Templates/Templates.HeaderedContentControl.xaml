@@ -1,0 +1,92 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	
+	<Style x:Key="HeaderedContentControlTemplate_HeaderContnet_TextStyle" TargetType="TextBlock">
+		<Setter Property="FontFamily" Value="Arial Unicode MS" />
+		<Setter Property="FontSize" Value="11px" />
+		<Setter Property="Padding" Value="3pt" />
+		<Setter Property="Margin" Value="0" />
+		<Setter Property="Foreground" Value="Black" />
+	</Style>
+	
+	<RadialGradientBrush
+		x:Key="HeaderedContentControlTemplate_RadialGradientBrush_Overlay"
+		GradientOrigin="0.5,1"
+		Center="0.5,1"
+		RadiusY="0.25"
+		RadiusX="1"
+		MappingMode="RelativeToBoundingBox">
+		<GradientStop Color="Transparent" Offset="1" />
+		<GradientStop Color="White" Offset="0.165" />
+		<GradientStop Color="#FFD4D4D4" Offset="0" />
+	</RadialGradientBrush>
+	
+	<!-- overrides: 'Templates.HeaderedContentControl.xaml' -->
+	<ControlTemplate x:Key="HeaderedContentControlTemplate" TargetType="{x:Type HeaderedContentControl}">
+		<ControlTemplate.Resources>
+			<Storyboard x:Key="HasFocus_True">
+				<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="activeBorder">
+					<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0.13" />
+				</DoubleAnimationUsingKeyFrames>
+				<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="BorderBackground_Content_Overlay">
+					<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1" />
+				</DoubleAnimationUsingKeyFrames>
+				<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)" Storyboard.TargetName="BorderBackground_Content">
+					<EasingColorKeyFrame KeyTime="0:0:0.5" Value="#FCFFFFFF" />
+				</ColorAnimationUsingKeyFrames>
+				<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="BorderBackground_Content">
+					<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0.795" />
+				</DoubleAnimationUsingKeyFrames>
+			</Storyboard>
+			<Storyboard x:Key="HasFocus_False">
+				<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="activeBorder">
+					<EasingDoubleKeyFrame KeyTime="0:0:0.50000" Value="0" />
+				</DoubleAnimationUsingKeyFrames>
+				<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="BorderBackground_Content_Overlay">
+					<EasingDoubleKeyFrame KeyTime="0:0:0.50000" Value="0" />
+				</DoubleAnimationUsingKeyFrames>
+				<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="BorderBackground_Content">
+					<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0.2" />
+				</DoubleAnimationUsingKeyFrames>
+			</Storyboard>
+		</ControlTemplate.Resources>
+		<Grid>
+			<!-- Templates.DefaultGradients.xaml => grad_HeaderedContentControl_Header, grad_HeaderedContentControl_Content_Valid -->
+			<Border x:Name="border" CornerRadius="3" Background="{DynamicResource grad_HeaderedContentControl_Header}" />
+			<Border x:Name="activeBorder" CornerRadius="3" Background="{DynamicResource grad_HeaderedContentControl_Content_Valid}" Opacity="0" BorderThickness="3" />
+			<DockPanel>
+				<Grid DockPanel.Dock="Top">
+					<ContentPresenter x:Name="contentPresenter" ContentSource="Header" RenderTransformOrigin="0.5,0.5">
+						<ContentPresenter.Content>
+							<Grid>
+								<TextBlock Style="{StaticResource HeaderedContentControlTemplate_HeaderContnet_TextStyle}" Text="{TemplateBinding Header}" />
+							</Grid>
+						</ContentPresenter.Content>
+					</ContentPresenter>
+				</Grid>
+				<Grid>
+					<Border x:Name="BorderBackground_Content" Margin="3" CornerRadius="3" Background="White" Opacity="0.2" />
+					<Border x:Name="BorderBackground_Content_Overlay" Background="{StaticResource HeaderedContentControlTemplate_RadialGradientBrush_Overlay}" Margin="3" CornerRadius="3" Opacity="0" />
+					<ContentPresenter Margin="10" x:Name="contentPresenter1" ContentSource="Content" />
+				</Grid>
+			</DockPanel>
+		</Grid>
+		<ControlTemplate.Triggers>
+			<Trigger Property="IsKeyboardFocusWithin" SourceName="contentPresenter1" Value="True">
+				<Trigger.EnterActions>
+					<BeginStoryboard Storyboard="{StaticResource HasFocus_True}" />
+				</Trigger.EnterActions>
+				<Trigger.ExitActions>
+					<BeginStoryboard x:Name="HasFocus_False_BeginStoryboard" Storyboard="{StaticResource HasFocus_False}" />
+				</Trigger.ExitActions>
+			</Trigger>
+		</ControlTemplate.Triggers>
+	</ControlTemplate>
+		
+	<Style TargetType="{x:Type HeaderedContentControl}">
+		<Setter Property="SnapsToDevicePixels" Value="True" />
+		<Setter Property="UseLayoutRounding" Value="True" />
+		<Setter Property="Template" Value="{StaticResource HeaderedContentControlTemplate}" />
+	</Style>
+
+</ResourceDictionary>

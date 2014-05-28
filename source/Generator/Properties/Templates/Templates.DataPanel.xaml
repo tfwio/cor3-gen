@@ -1,0 +1,17 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<DataTemplate x:Key="Generator_Tpl_Template">
+		<Grid>
+			<TextBlock FontWeight="Bold" Text="{Binding Alias}" />
+			<StackPanel Grid.Column="1" Orientation="Vertical">
+				<StackPanel Orientation="Horizontal">
+					<TextBlock FontSize="9" Text="id: " />
+					<TextBlock FontSize="9" Text="{Binding Path=id}" />
+				</StackPanel>
+			</StackPanel>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="Auto" />
+			</Grid.ColumnDefinitions>
+		</Grid>
+	</DataTemplate>
+</ResourceDictionary>

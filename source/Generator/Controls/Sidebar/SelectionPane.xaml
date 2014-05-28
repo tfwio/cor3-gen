@@ -1,0 +1,62 @@
+﻿<AvalonDock:DockableContent Focusable="False" x:Class="Generator.Content.SelectionPane" xmlns:AvalonDock="clr-namespace:AvalonDock;assembly=AvalonDock" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ScrollViewer Padding="3px" VerticalScrollBarVisibility="Auto">
+    <StackPanel>
+      <StackPanel.Resources>
+        <Style TargetType="Label">
+          <Setter Property="Foreground" Value="#FF42567A" />
+          <Setter Property="FontWeight" Value="Bold" />
+          <Setter Property="FontSize" Value="10" />
+          <Setter Property="HorizontalAlignment" Value="Right" />
+        </Style>
+      </StackPanel.Resources>
+      <HeaderedContentControl Header="Generator—Selection" Focusable="False">
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+          <Label Grid.Row="0" Content="Database" Grid.Column="0" />
+          <Label Grid.Row="1" Content="Table" Grid.Column="0" />
+          <Label Grid.Row="2" Content="Field" Grid.Column="0" />
+          <ComboBox Grid.Column="1" Grid.Row="0" x:Name="comboDatabase" DisplayMemberPath="Name" ItemsSource="{Binding Databases}" />
+          <ComboBox Grid.Column="1" Grid.Row="1" x:Name="comboTable" DisplayMemberPath="Name" ItemsSource="{Binding Tables}" />
+          <ComboBox Grid.Column="1" Grid.Row="2" x:Name="comboField" DisplayMemberPath="DataName" ItemsSource="{Binding Fields}" />
+        </Grid>
+      </HeaderedContentControl>
+      <Separator Height="3px" Background="{x:Null}" />
+      <HeaderedContentControl Header="Template Info" Focusable="False">
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+          <Label Grid.Row="0" Content="Template Group" Grid.Column="0" />
+          <ComboBox Grid.Column="1" Grid.Row="0" x:Name="comboTemplateGroup" IsEditable="True" DisplayMemberPath="Name" ItemsSource="{Binding TemplateGroups}" />
+          <ComboBox Grid.Column="1" Grid.Row="1" x:Name="comboTemplateAlias" IsEditable="True" DisplayMemberPath="Name" ItemsSource="{Binding Templates}" />
+          <Label Grid.Row="1" Content="Selected Template" Grid.Column="0"></Label>
+          <TextBox Grid.Column="1" Grid.Row="2" x:Name="comboTemplateSyntaxLanguage" Text="{Binding SyntaxLanguage}" />
+          <Label Grid.Row="2" Content="Syntax Language" Grid.Column="0"></Label>
+        </Grid>
+      </HeaderedContentControl>
+      <HeaderedContentControl Header="Current Template" Focusable="False" x:Name="headerTemplateContext" DataContext="{Binding SelectedTemplateRow}">
+        <StackPanel>
+          <Button x:Name="buttonAddTemplate" Content="Add Template" Grid.Row="2" Grid.Column="0" />
+          <TextBox x:Name="textTemplateAlias" ToolTip="Alias" Text="{Binding Alias}" Grid.Row="2" Grid.Column="1" />
+          <TextBox x:Name="textTemplateGroup" ToolTip="Group" Text="{Binding Group}" Grid.Row="2" Grid.Column="1" />
+          <TextBox x:Name="textTemplateLang" ToolTip="SyntaxLanguage" Text="{Binding SyntaxLanguage}" Grid.Row="2" Grid.Column="1" />
+          <TextBox x:Name="textTemplateTags" ToolTip="Tags" Text="{Binding Tags}" Grid.Row="2" Grid.Column="1" />
+        </StackPanel>
+      </HeaderedContentControl>
+    </StackPanel>
+  </ScrollViewer>
+</AvalonDock:DockableContent>

@@ -1,0 +1,62 @@
+﻿<SyntaxDefinition name="CSS" extensions=".css" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
+	<Color name="Comment" foreground="#47c431" />
+	<Color name="String" foreground="Red" />
+	<Color name="Selector" foreground="#ead55d" fontWeight="bold" />
+	<Color name="Class" foreground="#777777" />
+	<Color name="Keyname" foreground="#ff7777"/>
+	<Color name="Property" foreground="#ead55d"/>
+	<Color name="Value" foreground="#ffffff" />
+	<Color name="Default" foreground="Pink" />
+	<Color name="Punctuation1" foreground="Silver" fontWeight="bold" />
+	<Color name="Punctuation2" foreground="White" fontWeight="bold" />
+	<Color name="CurlyBraces" foreground="Silver" />
+	<Color name="Numerics" foreground="#ffffff" />
+	<Color name="WordSet" foreground="#8c99e1" />
+	<!--
+		See the Grammar (section 10.1 of the following: “CSS Level 3: Selectors”)
+		>	http://www.w3.org/TR/2011/REC-css3-selectors-20110929/
+		No particular reason, but we would like to see recognition
+		of selectors and property-names generally different or
+		separate from property-attribute and property-attribute-value.
+	-->
+	<RuleSet ignoreCase="true">
+		<Rule color="Keyname">@[\w-]*</Rule>
+		<Span color="Comment" multiline="true">
+			<Begin>/\*</Begin>
+			<End>\*/</End>
+		</Span>
+		<!--<Span color="Property">
+			<Begin>([^,],?)*</Begin>
+			<End>\{</End>
+		</Span>-->
+		<!--<Span color="Value" multiline="true">
+			<Begin color="Colon">\:</Begin>
+			<End color="CurlyBraces">\;|(?=\})</End>
+			<RuleSet>-->
+		<Span color="String" multiline="true">
+			<Begin>"</Begin>
+			<End>"</End>
+			<RuleSet>
+				<Span begin="\\" end="." />
+			</RuleSet>
+		</Span>
+		<Span color="String" multiline="true">
+			<Begin>'</Begin>
+			<End>'</End>
+			<RuleSet>
+				<Span begin="\\" end="." />
+			</RuleSet>
+		</Span>
+		<!--</RuleSet>
+		</Span>-->
+		<!--<Rule color="WordSet">(\w+-)*\w+</Rule>-->
+		<Rule color="Numerics">[^\w][0-9-]+?(pt|px|em|rem|in|mm|cm|pc|rad|deg)|([^\w][0-9-]*\.[0-9]*)+?(pt|px|em|rem|in|mm|cm|pc|rad|deg)|[^\w][0-9-]*\.[0-9]*|[^\w][0-9]*</Rule>
+		<Rule color="Punctuation1">[,.+\-/%*&lt;&gt;^=~!&amp;]</Rule>
+		<Rule color="Punctuation2">[()\[\]{}]</Rule>
+		<Rule color="Class">\#[^\s\{;]*</Rule>
+		<Rule color="String">\#{3}|\#{6}</Rule>
+		<Rule color="Selector">[\d\w]</Rule>
+	</RuleSet>
+
+</SyntaxDefinition>
+

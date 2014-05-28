@@ -1,0 +1,40 @@
+﻿<UserControl
+	x:Class="GeneratorTool.Views.SQLiteView"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:icAvalon="http://icsharpcode.net/sharpdevelop/avalonedit"
+	xmlns:l="clr-namespace:GeneratorTool.SQLiteUtil"
+	xmlns:c="clr-namespace:GeneratorTool.Views"
+	xmlns:ctl="clr-namespace:GeneratorTool.Controls"
+>
+	<Grid>
+		<DockPanel>
+			<StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+				<TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="DB " />
+				<Button Content="CREATE DB" Click="Event_CreateDb" />
+				<Button Content="LOAD DB" Click="Event_OpenDb" />
+				<Button Content="UNLOAD DB" />
+				<Separator Background="Transparent" BorderBrush="{x:Null}" Width="3" />
+				
+				<TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="QUERY " />
+				<Button Content="EXECUTE (NonQuery)" Click="Event_ExecuteNonQuery" x:Name="btnNonQuery" />
+				<Button Content="EXECUTE (SELECT)" Click="Event_ExecuteSelectQuery" />
+				<Separator Background="Transparent" BorderBrush="{x:Null}" Width="3" />
+				
+				<TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="SQL " />
+				<Button Content="LOAD" Command="{x:Static l:SQLFileLoader.LoadSqlFileCommand}" CommandParameter="{Binding ElementName=edit}" />
+				<Button Content="SAVE" Command="{x:Static l:SQLFileLoader.SaveSqlFileCommand}" CommandParameter="{Binding ElementName=edit}" />
+				<Button Content="SAVE AS" Command="{x:Static l:SQLFileLoader.SaveSqlFileAsCommand}" CommandParameter="{Binding ElementName=edit}" />
+			
+			</StackPanel>
+			<TabControl x:Name="tabs" Background="Transparent" BorderBrush="Transparent">
+				<TabItem Header="SQL" x:Name="tabSql">
+					<ctl:Editor x:Name="edit" SyntaxHighlighting="SQL" FontSize="14" Text="SELECT * from sqlite_master;" />
+				</TabItem>
+				<TabItem Header="View" x:Name="tabView">
+					<DataGrid x:Name="grid" />
+				</TabItem>
+			</TabControl>
+		</DockPanel>
+	</Grid>
+</UserControl>

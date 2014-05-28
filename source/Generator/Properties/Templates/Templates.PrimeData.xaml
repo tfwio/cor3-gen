@@ -1,0 +1,65 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+>
+	
+	<!-- Named Item template -->
+	<DataTemplate x:Key="tpl_nam">
+		<Grid>
+			<StackPanel Orientation="Horizontal">
+				<TextBlock FontWeight="Bold" Text="{Binding name}" />
+				<!--<StackPanel Orientation="Vertical">
+					<StackPanel Orientation="Horizontal">
+						<TextBlock FontSize="9" Text="id: " />
+						<TextBlock FontSize="9" Text="{Binding Path=id}" />
+					</StackPanel>
+				</StackPanel>-->
+			</StackPanel>
+		</Grid>
+	</DataTemplate>
+	<!-- Prime Documents Template (aka: portal, notes, sticky) -->
+	<DataTemplate x:Key="PrimeDoc_Template">
+		<Grid>
+			<StackPanel Orientation="Horizontal">
+				<StackPanel Orientation="Vertical">
+					<TextBlock FontWeight="Bold" Text="{Binding title}" />
+					<StackPanel Orientation="Horizontal">
+						<TextBlock FontSize="9" Text="id: " />
+						<TextBlock FontSize="9" Text="{Binding Path=id}" />
+						<TextBlock FontSize="9" Text=", crd: " />
+						<TextBlock FontSize="9" Text="{Binding crd, StringFormat=yyyy-MM-dd}" />
+						<TextBlock FontSize="9" Text=", mod: " />
+						<TextBlock FontSize="9" Text="{Binding mod, StringFormat=yyyy-MM-dd}" />
+					</StackPanel>
+				</StackPanel>
+			</StackPanel>
+		</Grid>
+	</DataTemplate>
+	<!-- Prime ID driven item template -->
+	<DataTemplate x:Key="PrimeTemplates_Template">
+		<Grid>
+			<Grid.ToolTip>
+				<StackPanel Orientation="Horizontal">
+					<TextBlock FontSize="9" Text="id: " />
+					<TextBlock FontSize="9" Text="{Binding Path=id}" />
+				</StackPanel>
+			</Grid.ToolTip>
+			<TextBlock FontFamily="Arial" FontSize="10" Padding="3" FontWeight="Bold" Text="{Binding title}" />
+		</Grid>
+	</DataTemplate>
+	<!-- Drivers table template -->
+	<DataTemplate x:Key="TDriver_Template">
+		<Grid>
+			<StackPanel Orientation="Horizontal">
+				<StackPanel.ToolTip>
+					<StackPanel Orientation="Horizontal">
+						<TextBlock FontSize="9" Text="id: " />
+						<TextBlock FontSize="9" Text="{Binding driverno}" />
+					</StackPanel>
+				</StackPanel.ToolTip>
+				<TextBlock FontFamily="Arial" FontSize="14" FontWeight="Bold" Text="{Binding lname}" />
+				<TextBlock FontFamily="Arial" FontSize="14" FontWeight="Bold" Text=", " />
+				<TextBlock FontFamily="Arial" FontSize="14" Text="{Binding fname}" />
+			</StackPanel>
+		</Grid>
+	</DataTemplate>
+</ResourceDictionary>

@@ -1,0 +1,379 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{8C855BA4-0467-4F09-B822-2AFC4982CB2A}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>GeneratorTool</RootNamespace>
+    <AssemblyName>GeneratorTool</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.20525.0</ExpressionBlendVersion>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DelaySign>False</DelaySign>
+    <RobotoBlack>Assets\Typo\Roboto 900.ttf</RobotoBlack>
+    <UbuntuB>Fonts\Ubuntu-B-webfont.ttf</UbuntuB>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <AssemblyOriginatorKeyFile>GeneratorTool.snk</AssemblyOriginatorKeyFile>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <StartupObject>GeneratorTool.App</StartupObject>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <SignAssembly>True</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <StartAction>Project</StartAction>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+    <StartAction>Project</StartAction>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\..\Project\packages\Autofac.3.1.5\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="AvalonDock">
+      <HintPath>build\AssemblyReferences\AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Caliburn.Metro.Autofac">
+      <HintPath>..\..\Project\packages\Caliburn.Metro.Autofac.0.4.0\lib\net45\Caliburn.Metro.Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Caliburn.Metro.Core">
+      <HintPath>..\..\Project\packages\Caliburn.Metro.Autofac.0.4.0\lib\net45\Caliburn.Metro.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Caliburn.Micro">
+      <HintPath>..\..\Project\packages\Caliburn.Micro.1.5.2\lib\net45\Caliburn.Micro.dll</HintPath>
+    </Reference>
+    <Reference Include="FirstFloor.ModernUI">
+      <HintPath>..\..\Project\packages\ModernUI.WPF.1.0.5\lib\net45\FirstFloor.ModernUI.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.AvalonEdit">
+      <HintPath>build\AssemblyReferences\ICSharpCode.AvalonEdit.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpDevelop">
+      <HintPath>build\AssemblyReferences\ICSharpCode.SharpDevelop.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpDevelop.Dom">
+      <HintPath>build\AssemblyReferences\ICSharpCode.SharpDevelop.Dom.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpDevelop.Sda">
+      <HintPath>build\AssemblyReferences\ICSharpCode.SharpDevelop.Sda.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpDevelop.Widgets">
+      <HintPath>build\AssemblyReferences\ICSharpCode.SharpDevelop.Widgets.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.TreeView">
+      <HintPath>build\AssemblyReferences\ICSharpCode.TreeView.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro">
+      <HintPath>..\..\Project\packages\MahApps.Metro.0.10.1.1\lib\net45\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\..\Project\packages\System.Data.SQLite.1.0.90.0\lib\net45\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq">
+      <HintPath>..\..\Project\packages\System.Data.SQLite.1.0.90.0\lib\net45\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity">
+      <HintPath>..\..\Project\packages\MahApps.Metro.0.10.1.1\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="..\..\Source\Cor3.Stock\Images\Oxygen\table.png">
+      <Link>Assets\Icons\table.png</Link>
+    </Resource>
+    <Resource Include="..\..\Source\Cor3.Stock\Images\Oxygen\kexi.png">
+      <Link>Assets\Icons\kexi.png</Link>
+    </Resource>
+    <Resource Include="Assets\Typo\Droid Sans 700.ttf" />
+    <Resource Include="Assets\Typo\Droid Sans regular.ttf" />
+    <Resource Include="Assets\Typo\Lato 100.ttf" />
+    <Resource Include="Assets\Typo\Lato 100italic.ttf" />
+    <Resource Include="Assets\Typo\Lato 300.ttf" />
+    <Resource Include="Assets\Typo\Lato 300italic.ttf" />
+    <Resource Include="Assets\Typo\Lato 700.ttf" />
+    <Resource Include="Assets\Typo\Lato 700italic.ttf" />
+    <Resource Include="Assets\Typo\Lato 900.ttf" />
+    <Resource Include="Assets\Typo\Lato 900italic.ttf" />
+    <Resource Include="Assets\Typo\Lato italic.ttf" />
+    <Resource Include="Assets\Typo\Lato regular.ttf" />
+    <Resource Include="Assets\Typo\Oxygen 300.ttf" />
+    <Resource Include="Assets\Typo\Oxygen 700.ttf" />
+    <Resource Include="Assets\Typo\Oxygen regular.ttf" />
+    <Resource Include="Assets\Icons\code-variable.png" />
+    <None Include="C:\Users\oio\AppData\Local\Temp\skyfonts-google\Roboto 100.ttf">
+      <Link>Assets\Typo\Roboto 100.ttf</Link>
+    </None>
+    <None Include="C:\Users\oio\AppData\Local\Temp\skyfonts-google\Roboto 100italic.ttf">
+      <Link>Assets\Typo\Roboto 100italic.ttf</Link>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\Users\oio\AppData\Local\Temp\skyfonts-google\Roboto 300.ttf">
+      <Link>Assets\Typo\Roboto 300.ttf</Link>
+    </None>
+    <None Include="C:\Users\oio\AppData\Local\Temp\skyfonts-google\Roboto 300italic.ttf">
+      <Link>Assets\Typo\Roboto 300italic.ttf</Link>
+    </None>
+    <None Include="C:\Users\oio\AppData\Local\Temp\skyfonts-google\Roboto 500.ttf">
+      <Link>Assets\Typo\Roboto 500.ttf</Link>
+    </None>
+    <None Include="C:\Users\oio\AppData\Local\Temp\skyfonts-google\Roboto 500italic.ttf">
+      <Link>Assets\Typo\Roboto 500italic.ttf</Link>
+    </None>
+    <None Include="C:\Users\oio\AppData\Local\Temp\skyfonts-google\Roboto 700.ttf">
+      <Link>Assets\Typo\Roboto 700.ttf</Link>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\Users\oio\AppData\Local\Temp\skyfonts-google\Roboto 700italic.ttf">
+      <Link>Assets\Typo\Roboto 700italic.ttf</Link>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <Resource Include="C:\Users\oio\AppData\Local\Temp\skyfonts-google\Roboto 900.ttf">
+      <Link>Assets\Typo\Roboto 900.ttf</Link>
+    </Resource>
+    <Resource Include="C:\Users\oio\AppData\Local\Temp\skyfonts-google\Roboto 900italic.ttf">
+      <Link>Assets\Typo\Roboto 900italic.ttf</Link>
+    </Resource>
+    <None Include="C:\Users\oio\AppData\Local\Temp\skyfonts-google\Roboto Condensed 300.ttf">
+      <Link>Assets\Typo\Roboto Condensed 300.ttf</Link>
+    </None>
+    <None Include="C:\Users\oio\AppData\Local\Temp\skyfonts-google\Roboto Condensed 300italic.ttf">
+      <Link>Assets\Typo\Roboto Condensed 300italic.ttf</Link>
+    </None>
+    <None Include="C:\Users\oio\AppData\Local\Temp\skyfonts-google\Roboto Condensed 700.ttf">
+      <Link>Assets\Typo\Roboto Condensed 700.ttf</Link>
+    </None>
+    <None Include="C:\Users\oio\AppData\Local\Temp\skyfonts-google\Roboto Condensed 700italic.ttf">
+      <Link>Assets\Typo\Roboto Condensed 700italic.ttf</Link>
+    </None>
+    <None Include="C:\Users\oio\AppData\Local\Temp\skyfonts-google\Roboto Condensed italic.ttf">
+      <Link>Assets\Typo\Roboto Condensed italic.ttf</Link>
+    </None>
+    <Resource Include="C:\Users\oio\AppData\Local\Temp\skyfonts-google\Roboto Condensed regular.ttf">
+      <Link>Assets\Typo\Roboto Condensed regular.ttf</Link>
+    </Resource>
+    <Resource Include="C:\Users\oio\AppData\Local\Temp\skyfonts-google\Roboto italic.ttf">
+      <Link>Assets\Typo\Roboto italic.ttf</Link>
+    </Resource>
+    <Resource Include="C:\Users\oio\AppData\Local\Temp\skyfonts-google\Roboto regular.ttf">
+      <Link>Assets\Typo\Roboto regular.ttf</Link>
+    </Resource>
+    <Resource Include="C:\Users\oio\AppData\Local\Temp\skyfonts-google\Roboto Slab 100.ttf">
+      <Link>Assets\Typo\Roboto Slab 100.ttf</Link>
+    </Resource>
+    <Resource Include="C:\Users\oio\AppData\Local\Temp\skyfonts-google\Roboto Slab 300.ttf">
+      <Link>Assets\Typo\Roboto Slab 300.ttf</Link>
+    </Resource>
+    <Resource Include="C:\Users\oio\AppData\Local\Temp\skyfonts-google\Roboto Slab 700.ttf">
+      <Link>Assets\Typo\Roboto Slab 700.ttf</Link>
+    </Resource>
+    <Resource Include="C:\Users\oio\AppData\Local\Temp\skyfonts-google\Roboto Slab regular.ttf">
+      <Link>Assets\Typo\Roboto Slab regular.ttf</Link>
+    </Resource>
+    <None Include="Resources\Entypo-license.txt" />
+    <None Include="Resources\Entypo.ttf" />
+    <None Include="x64\SQLite.Interop.dll" />
+    <None Include="x86\SQLite.Interop.dll" />
+    <None Include="Assets\Icons\speaker_tosort.ico" />
+    <Page Include="Assets\Styles\GlobalTheme.xaml" />
+    <Page Include="Resources\Icons.xaml" />
+    <Page Include="Source\Controls\AvalonEditor\Editor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DataEditorContent.xaml" />
+    <Page Include="Views\FieldViewContent.xaml" />
+    <Page Include="Views\MuiModern.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Settings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SettingsAppearance.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="App.xaml" />
+    <Page Include="Assets\Styles\Lime.xaml" />
+    <Page Include="Assets\Styles\Theme.xaml" />
+    <Page Include="Views\MainView.xaml" />
+    <Page Include="Views\Moxi.xaml" />
+    <Page Include="Views\TableViewContent.xaml" />
+    <Page Include="Views\TextView.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Controls\AvalonEditor\CommentBlockFoldingStrategy.cs">
+      <DependentUpon>Editor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Controls\AvalonEditor\Common.cs" />
+    <Compile Include="Source\Controls\AvalonEditor\CSPragmaFoldingStrategy.cs">
+      <DependentUpon>Editor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Controls\AvalonEditor\CssCurlyFoldingStrategy.cs" />
+    <Compile Include="Source\Controls\AvalonEditor\Editor.xaml.cs">
+      <DependentUpon>Editor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Controls\AvalonEditor\ISyntaxRecognitionStrategy.cs">
+      <DependentUpon>Editor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Controls\AvalonEditor\Segment.cs">
+      <DependentUpon>Editor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Controls\AvalonEditor\TextEditorExtension.cs">
+      <DependentUpon>Editor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Controls\AvalonEditor\ZoomLevelToTextFormattingModeConverter.cs">
+      <DependentUpon>Editor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\GeneratorReader.cs" />
+    <Compile Include="Source\Common\AppGlobal.cs" />
+    <Compile Include="Source\Common\CommandManager.cs" />
+    <Compile Include="Source\Common\LocalWindowManager.cs" />
+    <Compile Include="Source\Common\SQLiteAbstract.cs" />
+    <Compile Include="Source\Common\WindowStyleChanged.cs" />
+    <Compile Include="Source\Converters\RectConverter.cs" />
+    <Compile Include="Source\Extensions\UriHackExtension.cs" />
+    <Compile Include="Source\Extensions\WpfExtensions.cs" />
+    <Compile Include="Source\Common\CheckForFileException.cs" />
+    <Compile Include="Source\Common\Common.UriHacks.cs" />
+    <Compile Include="Source\Common\ContentLoader.cs" />
+    <Compile Include="Source\Common\NetContentFilter.cs" />
+    <Compile Include="Source\Common\NetContentFilterType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\WPFAssemblyInfo.cs" />
+    <Compile Include="Resource.Designer.cs">
+      <DependentUpon>Resource.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Views\DataEditorContent.xaml.cs">
+      <DependentUpon>DataEditorContent.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\FieldViewContent.xaml.cs">
+      <DependentUpon>FieldViewContent.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\MuiModern.xaml.cs">
+      <DependentUpon>MuiModern.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SelectionChangedBehaviour.cs" />
+    <Compile Include="Views\Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingsAppearance.xaml.cs">
+      <DependentUpon>SettingsAppearance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingsAppearanceViewModel.cs" />
+    <Compile Include="Views\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\Moxi.xaml.cs">
+      <DependentUpon>Moxi.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\TableViewContent.xaml.cs">
+      <DependentUpon>TableViewContent.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\TextView.xaml.cs">
+      <DependentUpon>TextView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <Resource Include="Assets\Icons\Actions-edit-find.ico" />
+    <Resource Include="Assets\Icons\veetle-brand.ico" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets" />
+    <Folder Include="Assets\Styles" />
+    <Folder Include="Assets\Typo" />
+    <Folder Include="Source\Controls\AvalonEditor" />
+    <Folder Include="Source\Extensions" />
+    <Folder Include="Source\Controls" />
+    <Folder Include="Views" />
+    <Folder Include="Source\Common" />
+    <Folder Include="Source\Converters" />
+    <Folder Include="Assets\Icons" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Source\Cor3.Core\System.Cor3-Net40.csproj">
+      <Project>{CAFD2E08-18A8-474D-AA83-6ADFAFD9C198}</Project>
+      <Name>System.Cor3-Net40</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Source\Cor3.Data\System.Cor3.Data-Net40.csproj">
+      <Project>{BBAA461E-C30E-460B-BA30-0F6A8FDF7B78}</Project>
+      <Name>System.Cor3.Data-Net40</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Source\Cor3.Parsers\System.Cor3.Parsers-Net40.csproj">
+      <Project>{AAF48B33-3DF6-4D51-8366-0F768D67AE44}</Project>
+      <Name>System.Cor3.Parsers-Net40</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GenaratorLib\Generator.Lib.csproj">
+      <Project>{FF8C58DF-784E-4818-A92C-150B8BD6B85E}</Project>
+      <Name>Generator.Lib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Expression\Blend\.NETFramework\v4.0\Microsoft.Expression.Blend.WPF.targets" />
+</Project>

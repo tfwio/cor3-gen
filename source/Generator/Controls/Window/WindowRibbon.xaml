@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<fluent:Ribbon
+	x:Class="Generator.Controls.WindowRibbon"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
+	xmlns:local="clr-namespace:Generator.Controls"
+	xmlns:svc="clr-namespace:Generator.Service"
+	xmlns:content="clr-namespace:Generator.Content"
+	xmlns:ad="clr-namespace:AvalonDock;assembly=AvalonDock"
+	xmlns:sys="clr-namespace:System;assembly=mscorlib"
+	xmlns:gen="clr-namespace:Generator"
+	xmlns:cls="clr-namespace:Generator.Classes"
+	xmlns:forms="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+	xmlns:map="clr-namespace:Generator.Elements;assembly=System.Cor3.Data.Reference"
+	xmlns:fluent="clr-namespace:Fluent;assembly=Fluent"
+	xmlns:wform="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration">
+	<!-- back-stage ItemsPanelBackground="#ffa6cd5f" -->
+	<fluent:Ribbon.Menu>
+		<fluent:Backstage>
+			<fluent:BackstageTabControl>
+				<fluent:BackstageTabItem MinWidth="240" Header="Open">
+					<Grid>
+						<Grid.Resources>
+							<Style TargetType="TextBox">
+								<Setter Property="Margin" Value="4,0,4,0" />
+							</Style>
+							<Style TargetType="Button">
+								<Setter Property="Padding" Value="3" />
+							</Style>
+						</Grid.Resources>
+						<Border Margin="24" CornerRadius="7" Background="#40000000" />
+						<ScrollViewer Margin="48" VerticalScrollBarVisibility="Auto">
+							<Grid>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="Auto" />
+									<ColumnDefinition Width="*" />
+									<ColumnDefinition Width="Auto" />
+								</Grid.ColumnDefinitions>
+								<Grid.RowDefinitions>
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="*" />
+								</Grid.RowDefinitions>
+								<!-- Generator  -->
+								<TextBlock Grid.Row="0" Grid.Column="0" Text="Configuration Collection" />
+								<TextBox Grid.Row="0" Grid.Column="1" Text="" />
+								<Button Grid.Row="0" Grid.Column="2" Content="Browse" />
+								<!--  -->
+								<TextBlock Grid.Row="1" Grid.Column="0" Text="Database Configuration" />
+								<TextBox Grid.Row="1" Grid.Column="1" Text="" />
+								<Button Grid.Row="1" Grid.Column="2" Content="Browse" />
+								<!--  -->
+								<TextBlock Grid.Row="2" Grid.Column="0" Text="Template Configuration" />
+								<TextBox Grid.Row="2" Grid.Column="1" Text="" />
+								<Button Grid.Row="2" Grid.Column="2" Content="Browse" />
+							</Grid>
+						</ScrollViewer>
+					</Grid>
+				</fluent:BackstageTabItem>
+				<fluent:BackstageTabItem MinWidth="240" Header="‘xdata2sqlite’">
+					<Grid>
+						<Grid.Resources>
+							<Style TargetType="TextBox">
+								<Setter Property="Margin" Value="4,0,4,0" />
+							</Style>
+							<Style TargetType="Button">
+								<Setter Property="Padding" Value="3" />
+							</Style>
+						</Grid.Resources>
+						<Border Margin="24" CornerRadius="7" Background="#40007FFF" />
+						<ScrollViewer Margin="48" VerticalScrollBarVisibility="Auto">
+							<Grid>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="Auto" />
+									<ColumnDefinition Width="*" />
+									<ColumnDefinition Width="Auto" />
+								</Grid.ColumnDefinitions>
+								<Grid.RowDefinitions>
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="*" />
+								</Grid.RowDefinitions>
+								<!-- Select a Database Configuration File -->
+								<TextBlock Grid.Row="0" Grid.Column="0" Text="data-config file to import" />
+								<TextBox x:Name="tbXmlDataFile" Grid.Row="0" Grid.Column="1" Text="" />
+								<Button Click="XData2SQLite_BrowseXData" Grid.Row="0" Grid.Column="2" Content="Browse" />
+								<!-- Sqlite db to export/create -->
+								<TextBlock Grid.Row="1" Grid.Column="0" Text="Save As SQLite Database" />
+								<TextBox x:Name="tbSqliteFile" Grid.Row="1" Grid.Column="1" Text="" />
+								<Button Click="XData2SQLite_BrowseSQLite" Grid.Row="1" Grid.Column="2" Content="Browse" />
+								<!-- Select a SQLite database to export to -->
+								<Button Click="XData2SQLite_ButtonClick" Grid.Row="2" Grid.ColumnSpan="3" Content="Go" />
+							</Grid>
+						</ScrollViewer>
+					</Grid>
+				</fluent:BackstageTabItem>
+			</fluent:BackstageTabControl>
+		</fluent:Backstage>
+	</fluent:Ribbon.Menu>
+	<!-- ribbon starts here -->
+	<fluent:RibbonTabItem Header="View">
+		<fluent:RibbonGroupBox Header="Utilities">
+			<!-- Removed Size="Middle" - in applying or using Fluent MetroWindow -->
+			<fluent:DropDownButton HorizontalAlignment="Stretch" Icon="{x:Static local:WindowRibbon.application_x_desktop}" LargeIcon="{x:Static local:WindowRibbon.application_x_desktop}" Header="Tool">
+				<fluent:DropDownButton.ToolTip>
+					<fluent:ScreenTip Title="Miscelanious Tool-Set" Text="Provides additional action and tools." />
+				</fluent:DropDownButton.ToolTip>
+				<MenuItem Header="Combine Table Tool" Command="{x:Static cls:UITemplateManager.CmdCombineTableTool}" />
+				<MenuItem Header="Install Utiltiy" />
+			</fluent:DropDownButton>
+			<!-- Removed Size="Middle" - in applying or using Fluent MetroWindow -->
+			<fluent:DropDownButton HorizontalAlignment="Stretch" Header="Actions" Icon="pack://application:,,,/System.Cor3.Stock;component/images/oxygen/preferences_plugin16.png" LargeIcon="pack://application:,,,/System.Cor3.Stock;component/images/oxygen/preferences_plugin32.png">
+				<fluent:DropDownButton.ToolTip>
+					<fluent:ScreenTip Title="Additional Actions" Text="Displays any miscelanious Actions not present in any other section." />
+				</fluent:DropDownButton.ToolTip>
+				<fluent:MenuItem GroupName="View" Header="View Database Configuration Source" ToolTip="{x:Static local:WindowRibbon.TipViewDConfig}">
+				</fluent:MenuItem>
+				<fluent:MenuItem GroupName="View" Header="View Database Configuration Source" ToolTip="{x:Static local:WindowRibbon.TipViewDConfigSource}">
+				</fluent:MenuItem>
+				<Separator />
+				<fluent:MenuItem GroupName="Add" Header="Add Global Reference" />
+				<fluent:MenuItem GroupName="Add" Header="Add File Reference (text)" />
+				<fluent:MenuItem GroupName="Add" Header="Add Directory Reference (Not Implemented)" />
+				<Separator />
+				<fluent:MenuItem GroupName="Wiz" Header="Table Wizard" />
+				<fluent:MenuItem GroupName="Wiz" Header="Database Wizard" />
+				<Separator />
+				<fluent:MenuItem GroupName="Export" Header="Export Template Configuration File" />
+				<fluent:MenuItem GroupName="Export" Header="Export Database Configuration File" />
+			</fluent:DropDownButton>
+			<!-- Removed Size="Middle" - in applying or using Fluent MetroWindow -->
+			<fluent:DropDownButton ToolTip="{x:Static local:WindowRibbon.TipAddTableField}" Icon="{x:Static local:WindowRibbon.methodM}" LargeIcon="pack://application:,,,/System.Cor3.Stock;component/images/oxygen/db.cfg.png" Header="Insert">
+				<fluent:MenuItem Icon="{x:Static local:WindowRibbon.methodM}" Header="Byte" Command="{x:Static cls:UITemplateManager.AddByteAction}" />
+				<fluent:MenuItem Icon="{x:Static local:WindowRibbon.methodM}" Header="Int32" Command="{x:Static cls:UITemplateManager.AddInt32Action}" />
+				<fluent:MenuItem Icon="{x:Static local:WindowRibbon.methodM}" Header="BigInt" Command="{x:Static cls:UITemplateManager.AddBigintAction}" />
+				<fluent:MenuItem Icon="{x:Static local:WindowRibbon.methodM}" Header="NVarChar50" Command="{x:Static cls:UITemplateManager.AddNVarChar50Action}" />
+				<fluent:MenuItem Icon="{x:Static local:WindowRibbon.methodM}" Header="NVarChar" Command="{x:Static cls:UITemplateManager.AddNVarCharAction}" />
+				<fluent:MenuItem Icon="{x:Static local:WindowRibbon.methodM}" Header="Decimal" Command="{x:Static cls:UITemplateManager.AddFloatAction}" />
+				<fluent:MenuItem Icon="{x:Static local:WindowRibbon.methodM}" Header="Float" Command="{x:Static cls:UITemplateManager.AddDecimalAction}" />
+				<fluent:MenuItem Icon="{x:Static local:WindowRibbon.methodM}" Header="DateTime" Command="{x:Static cls:UITemplateManager.AddDateTimeAction}" />
+				<fluent:MenuItem Icon="{x:Static local:WindowRibbon.methodM}" Header="Bool" Command="{x:Static cls:UITemplateManager.AddBoolAction}" />
+			</fluent:DropDownButton>
+		</fluent:RibbonGroupBox>
+		<fluent:RibbonGroupBox Header="Mode">
+			<fluent:SplitButton ToolTip="{x:Static local:WindowRibbon.TipDatabaseConfiguration}" fluent:KeyTip.Keys="DB" LargeIcon="pack://application:,,,/System.Cor3.Stock;component/images/oxygen/kexi.png" Icon="pack://application:,,,/System.Cor3.Stock;component/images/oxygen/kexi.png" Command="{x:Static cls:UITemplateManager.CmdViewEditor}" x:Name="btnCfg" GroupName="tg1" Header="CFG">
+				<fluent:MenuItem Command="{x:Static cls:UITemplateManager.CmdNewDatabaseConfiguration}" Header="Create Database Configuration" />
+				<!--<Separator />-->
+				<fluent:MenuItem Icon="{x:Static local:WindowRibbon.fileNew}" Command="{x:Static gen:Window1.ConfigurationLoadCommand}" Header="Open Generator Configuration" />
+				<fluent:MenuItem Icon="{x:Static local:WindowRibbon.fileSave}" Command="{x:Static gen:Window1.ConfigurationSaveCommand}" Header="Save Generator Configuration" />
+				<!--<Separator />-->
+				<fluent:MenuItem Icon="{x:Static local:WindowRibbon.fileImport}" Command="{x:Static svc:DatabaseService.CmdOpenDatabaseConfiguration}" Header="Open Database Configuration" />
+				<fluent:MenuItem Icon="{x:Static local:WindowRibbon.fileSave}" Command="{x:Static svc:DatabaseService.CmdSaveDatabaseConfiguration}" Header="Save Database Configuration" />
+				<fluent:MenuItem Icon="{x:Static local:WindowRibbon.fileSaveAs}" Command="{x:Static svc:DatabaseService.CmdSaveDatabaseConfigurationAs}" Header="Save Database Configuration As" />
+				<!--<Separator />-->
+				<fluent:MenuItem Command="{x:Static svc:DatabaseService.CmdCloseDatabaseConfiguration}" Header="Close Database Configuration" />
+			</fluent:SplitButton>
+			<fluent:SplitButton x:Name="btnTpl" GroupName="tg1" Header="TPL" ToolTip="{x:Static local:WindowRibbon.TipTemplateConfiguration}" Command="{x:Static cls:UITemplateManager.CmdViewTemplate}" fluent:KeyTip.Keys="TPL" Icon="{x:Static local:WindowRibbon.template}" LargeIcon="{x:Static local:WindowRibbon.template}">
+				<fluent:MenuItem Command="{x:Static svc:TemplateService.CmdOpenTemplates}" Header="Open Template Configuration" />
+				<fluent:MenuItem Icon="{x:Static local:WindowRibbon.fileSave}" Command="{x:Static svc:TemplateService.CmdSaveTemplates}" Header="Save Template Configuration" />
+				<!--<Separator />-->
+				<fluent:MenuItem ToolTip="Show the Template's Table Section" Header="View Table" GroupName="tv" Command="{x:Static svc:TemplateService.CmdViewTemplateTable}" />
+				<fluent:MenuItem ToolTip="Show the Template's Field Section" Header="View Field" GroupName="tv" Command="{x:Static svc:TemplateService.CmdViewTemplateField}" />
+				<fluent:MenuItem ToolTip="Generate/Show the Template" Header="View Preview" GroupName="tv" Command="{x:Static svc:TemplateService.CmdRegenerateSelectedView}" />
+				<!--<Separator />-->
+				<fluent:MenuItem Command="{x:Static svc:TemplateService.CmdAddNewTemplate}" Header="Create Template" />
+			</fluent:SplitButton>
+			<fluent:SplitButton fluent:KeyTip.Keys="SQL" ToolTip="{x:Static local:WindowRibbon.TipSqlUtil}" Icon="{x:Static local:WindowRibbon.bolt16}" LargeIcon="{x:Static local:WindowRibbon.bolt32}" x:Name="btnSql" GroupName="tg1" Header="SQL" Command="{x:Static cls:UITemplateManager.CmdViewSql}">
+				<MenuItem Name="mConvert" Header="Convert" Command="{x:Static svc:SqlEditorCommands.ConvertCommand}" />
+				<MenuItem Header="Execute Query" Command="{x:Static svc:SqlEditorCommands.ExecuteSqlCommand}" />
+				<!--<Separator />-->
+				<fluent:MenuItem Icon="{x:Static local:WindowRibbon.fileSave}" Header="Load Sql File" Command="{x:Static svc:SqlEditorCommands.LoadSqlCommand}" />
+				<fluent:MenuItem Icon="{x:Static local:WindowRibbon.fileSaveAs}" Header="Save Query" Command="{x:Static svc:SqlEditorCommands.TestImpl}" />
+				<!--<Separator />-->
+				<MenuItem x:Name="mConvertToggler" Header="Show Converted Text" Command="{x:Static svc:SqlEditorCommands.ToggleConvertedTextCommand}" />
+			</fluent:SplitButton>
+			<fluent:SeparatorTabItem />
+		</fluent:RibbonGroupBox>
+		<fluent:RibbonGroupBox x:Name="rboxTemplateDetail" Header="Template Detail" MinWidth="200">
+			<ComboBox x:Name="comboTemplateType0" IsEditable="True" HorizontalAlignment="Stretch" ToolTip="{x:Static local:WindowRibbon.TipTemplateGroup}" MinWidth="120" />
+			<ComboBox x:Name="comboTemplateType1" IsEditable="True" HorizontalAlignment="Stretch" ToolTip="{x:Static local:WindowRibbon.TipTemplateAlias}" MinWidth="120" FontSize="14" />
+			<WrapPanel Orientation="Horizontal">
+				<TextBox x:Name="tbSyntax" Width="80" Text="{Binding SyntaxLanguage}" ToolTip="{x:Static local:WindowRibbon.TipSyntaxLanguage}" />
+				<TextBox x:Name="tbTag" Width="80" Text="{Binding [Tags]}" ToolTip="{x:Static local:WindowRibbon.TipTags}" />
+				<CheckBox x:Name="ckIsGlobal" Content="Global" FontSize="9" FontWeight="Bold" />
+			</WrapPanel>
+		</fluent:RibbonGroupBox>
+	</fluent:RibbonTabItem>
+	<fluent:RibbonTabItem Header="Tools">
+		<fluent:RibbonGroupBox Header="Settings">
+			<CheckBox x:Name="ckFoldPragmaRegion" Checked="CheckPragmaFolding" Unchecked="UncheckPragmaFolding" IsChecked="False" Content="Fold Pragma Regions" />
+		</fluent:RibbonGroupBox>
+		<fluent:RibbonGroupBox Header="Element Navigator" fluent:KeyTip.Keys="N">
+			<fluent:Button Header="Up" Icon="pack://application:,,,/System.Cor3.Stock;component/images/oxygen/1uparrow.png" LargeIcon="pack://application:,,,/System.Cor3.Stock;component/images/oxygen/1uparrow.png" />
+			<fluent:Button Header="Down" Icon="pack://application:,,,/System.Cor3.Stock;component/images/oxygen/1downarrow.png" LargeIcon="pack://application:,,,/System.Cor3.Stock;component/images/oxygen/1downarrow.png" />
+			<fluent:Button Header="Left" Icon="pack://application:,,,/System.Cor3.Stock;component/images/oxygen/1leftarrow.png" LargeIcon="pack://application:,,,/System.Cor3.Stock;component/images/oxygen/1leftarrow.png" />
+			<fluent:Button Header="Right" Icon="pack://application:,,,/System.Cor3.Stock;component/images/oxygen/1rightarrow.png" LargeIcon="pack://application:,,,/System.Cor3.Stock;component/images/oxygen/1rightarrow.png" />
+		</fluent:RibbonGroupBox>
+	</fluent:RibbonTabItem>
+</fluent:Ribbon>

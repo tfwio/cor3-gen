@@ -1,0 +1,17 @@
+﻿<Popup x:Class="Generator.Controls.PopupThing" xmlns:s="clr-namespace:Generator.Service" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:w="clr-namespace:System.Windows.Controls.Primitives;assembly=PresentationFramework" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Canvas Background="White">
+		<Canvas>
+			<Canvas.BitmapEffect>
+				<DropShadowBitmapEffect Softness=".5" ShadowDepth="5" Color="Black" />
+			</Canvas.BitmapEffect>
+			<Border BorderBrush="White" CornerRadius="7" />
+			<StackPanel Orientation="Vertical">
+				<Label Content="This is a header" FontWeight="Bold" FontFamily="Avenir LT Std" />
+				<Label Content="this is some caption" />
+				<TextBox x:Name="the" Text="" />
+				<Button Command="{x:Static s:SqlEditorCommands.PopupSqlSaveCommand}" Content="Save" />
+				<CheckBox x:Name="ckNewItem" Content="new" IsChecked="True" />
+			</StackPanel>
+		</Canvas>
+	</Canvas>
+</Popup>

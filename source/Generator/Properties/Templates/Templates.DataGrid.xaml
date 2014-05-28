@@ -1,0 +1,26 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+>
+	
+	<!--	<Image x:Key="imgBoxTpl" Source="../images/box_tpl.png" Stretch="None" />-->
+	<!-- DataGrid related brushes -->
+	<SolidColorBrush x:Key="GridLineColorBrush" Color="#FFCEDFF6" />
+	
+	<Style TargetType="{x:Type DataGrid}">
+		<Setter Property="RowHeight" Value="20" />
+		<Setter Property="BorderBrush" Value="{x:Null}" />
+		<Setter Property="BorderThickness" Value="0" />
+		
+		<Setter Property="Background" Value="{DynamicResource DefaultControlBackgroundBrush}" />
+		<Setter Property="Foreground" Value="{DynamicResource DefaultControlForegroundBrush}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource DefaultControlBorderBrush}" />
+		<!--<Setter Property="BorderBrush" Value="{DynamicResource DefaultControlBorderBrush}" />-->
+		<Setter Property="HorizontalGridLinesBrush" Value="{x:Static Brushes.Transparent}" />
+		<Setter Property="VerticalGridLinesBrush" Value="{DynamicResource GridLineColorBrush}" />
+		<Setter Property="VerticalGridLinesBrush" Value="{x:Static Brushes.Transparent}" />
+		<!--<Setter Property="HorizontalGridLinesBrush" Value="{DynamicResource GridLineColorBrush}" />-->
+		<Setter Property="AlternatingRowBackground" Value="{DynamicResource AlternateRowBackgroundBrush}" />
+		<Setter Property="BorderThickness" Value="0" />
+	</Style>
+
+</ResourceDictionary>

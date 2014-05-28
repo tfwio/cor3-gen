@@ -1,0 +1,106 @@
+﻿<UserControl
+	x:Class="Generator.Controls.SqlEditor"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
+	xmlns:edit="clr-namespace:AvalonEditor"
+	xmlns:ctls="clr-namespace:Generator.Controls"
+	xmlns:svc="clr-namespace:Generator.Service"
+	xmlns:txt="clr-namespace:System.Text;assembly=mscorlib">
+	<DockPanel Name="dp">
+		<ctls:PopupThing x:Name="thepopup" MouseUp="popupClicked" PlacementTarget="{Binding dp}" Placement="Relative" IsOpen="True" Width="200" Height="100" AllowsTransparency="True" VerticalAlignment="Center" HorizontalAlignment="Stretch" />
+		<Menu DockPanel.Dock="Top" OverridesDefaultStyle="False">
+			<MenuItem Name="mSchemaItems" Header="Schema">
+				<MenuItem.ItemContainerStyle>
+					<Style TargetType="MenuItem">
+						<Setter Property="Header" Value="{Binding CollectionName}" />
+						<EventSetter Event="Click" Handler="MenuItemClicked" />
+					</Style>
+				</MenuItem.ItemContainerStyle>
+			</MenuItem>
+			<MenuItem Name="mConvertToggler" Header="Show Converted Text" Command="{x:Static svc:SqlEditorCommands.ToggleConvertedTextCommand}" />
+		</Menu>
+		<Grid x:Name="mgrid">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="200*" />
+				<RowDefinition Height="3" />
+				<RowDefinition Height="250*" />
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<!-- SQL Editor -->
+			<HeaderedContentControl Header="SQL/T-SQL Text Editor">
+				<Grid>
+					<!-- Background="#101010" Foreground="#C1C1C1" -->
+					<edit:Editor x:Name="avalonTextEditor" ShowLineNumbers="True" UseLayoutRounding="True" FontFamily="Courier Std" FontSize="8.5pt" Encoding="{x:Static txt:Encoding.UTF8}" SnapsToDevicePixels="True" SyntaxHighlighting="SQL">
+						<edit:Editor.ContextMenu>
+							<ContextMenu>
+								<MenuItem Header="Cut" Command="{x:Static ApplicationCommands.Cut}" />
+								<MenuItem Header="Copy" Command="{x:Static ApplicationCommands.Copy}" />
+								<MenuItem Header="Paste" Command="{x:Static ApplicationCommands.Paste}" />
+								<MenuItem Header="Delete" Command="{x:Static ApplicationCommands.Delete}" />
+								<Separator />
+								<MenuItem Header="Export SQL “INSERT” Table" Command="{x:Static svc:SqlEditorCommands.ExportSqlInsertCommand}" />
+								<Separator />
+								<MenuItem Header="Execute Query" Command="{x:Static svc:SqlEditorCommands.ExecuteSqlCommand}" />
+								<MenuItem Header="Convert Command" Command="{x:Static svc:SqlEditorCommands.ConvertCommand}" />
+								<MenuItem Header="Schema">
+									<MenuItem Header="Root Info" Command="{x:Static svc:SqlEditorCommands.ExecuteRootInfo}" />
+								</MenuItem>
+							</ContextMenu>
+						</edit:Editor.ContextMenu>
+					</edit:Editor>
+				</Grid>
+			</HeaderedContentControl>
+			<GridSplitter HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1" />
+			<HeaderedContentControl Name="gridHeader" Grid.Row="2" Header="Data ‘View’" UseLayoutRounding="True">
+				<TabControl x:Name="tabCtl">
+					<TabItem Header="grid">
+						<DataGrid FontSize="9" HorizontalGridLinesBrush="Silver" VerticalGridLinesBrush="Silver" BorderBrush="Silver" DataContext="." x:Name="mainGrid" VerticalAlignment="Stretch" AutoGenerateColumns="True" BorderThickness="0" />
+					</TabItem>
+					<TabItem Header="txt">
+						<avalonEdit:TextEditor Name="avalonTextEditorO" ShowLineNumbers="True" UseLayoutRounding="True" FontFamily="Courier Std" FontSize="8.5pt" Encoding="{x:Static txt:Encoding.UTF8}" SnapsToDevicePixels="True" SyntaxHighlighting="XML" />
+					</TabItem>
+					<TabItem Header="SQL Template">
+						<Grid>
+							<avalonEdit:TextEditor HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="sqlRow" Grid.Row="0" />
+							<GridSplitter VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1" />
+							<avalonEdit:TextEditor HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="sqlContainer" Grid.Row="2" Text="Container {Rows}" />
+							<Grid Grid.Row="3">
+								<StackPanel Orientation="Horizontal">
+									<CheckBox x:Name="ckAutoQuote" Content="Auto Quote" />
+									<CheckBox x:Name="ckAutoQuoteSingle" Content="Single-Quote" />
+								</StackPanel>
+							</Grid>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="*" />
+								<RowDefinition Height="3" />
+								<RowDefinition Height="*" />
+								<RowDefinition Height="Auto" />
+							</Grid.RowDefinitions>
+						</Grid>
+					</TabItem>
+				</TabControl>
+			</HeaderedContentControl>
+			<HeaderedContentControl Grid.Row="3" Header="Configure Data Connection">
+				<StackPanel Orientation="Vertical">
+					<ComboBox x:Name="cbConnectionType" MinWidth="123" />
+					<StackPanel Name="stackMain" Orientation="Horizontal">
+						<Label MinWidth="90" Content="initial server" />
+						<TextBox MinWidth="240" x:Name="cbFileSelector" Text="VAIO\PRIME" />
+					</StackPanel>
+					<StackPanel Name="stackTable" Orientation="Horizontal" Visibility="Collapsed">
+						<Label MinWidth="90" Content="initial table" />
+						<TextBox MinWidth="240" x:Name="cbNameSelector" Text="prime" />
+					</StackPanel>
+					<StackPanel Orientation="Horizontal">
+						<Button Click="Ace12_browseMdbFile" x:Name="btnGetMdb" Content="browse" MinWidth="60" />
+						<Button Click="TestHandler" x:Name="btnConnect" Content="Test" MinWidth="60" />
+					</StackPanel>
+				</StackPanel>
+			</HeaderedContentControl>
+		</Grid>
+	</DockPanel>
+</UserControl>

@@ -1,0 +1,191 @@
+﻿<?xml version="1.0"?>
+<SyntaxDefinition name="Inno" extensions=".iss" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
+	
+	<Color name="LineComment"		foreground="#006400" />
+	<Color name="BlockComment"		foreground="#006400" />
+	<Color name="Character"			foreground="#a0522d" />
+	<Color name="String"			foreground="#a0522d" />
+	<Color name="SqlKeyWords"		foreground="#ffd700" />
+	<Color name="SqlActionWords"	foreground="#0000ff" />
+	<Color name="SqlTypes"			foreground="#0000ff" />
+	<Color name="SqlObjects"		foreground="#0000ff" />
+	<Color name="TSql"				foreground="#00008b" />
+	<Color name="Punctuation"		foreground="#2f4f4f" />
+	<Color name="Objects"			foreground="#8b0000" />
+	<Color name="Operators"			foreground="#a9a9a9" />
+	<Color name="Functions"			foreground="#8b0000" />
+	<Color name="Identifiers"		foreground="#007FFF" />
+	<Color name="Sections"			foreground="#0073ff" background="#c0c0c0" />
+	<Color name="Preprocess"		foreground="#30611f" />
+	<Color name="Mage"				foreground="#0000FF" />
+	<Color name="Blacker"			foreground="#000000" />
+	<Color name="Mark"				foreground="#0077FF" />
+	
+	<RuleSet ignoreCase="true">
+		
+		<Rule color="Preprocess">\#w+</Rule>
+		<Rule color="Preprocess">\#[0-9\w_]+</Rule>
+		
+		<!--<Delimiters>=!&gt;&lt;+-/*%&amp;|^~.}{,;][?:()</Delimiters>-->
+		<Span color="LineComment"	begin=";" multiline="false" />
+		<Span color="LineComment"	begin="//" multiline="false" />
+		
+		<Span color="BlockComment"	begin="{" end="}" multiline="true">
+			<RuleSet>
+				<Rule color="Blacker" fontWeight="bold">\#?[^\}:][\w]*</Rule>
+			</RuleSet>
+		</Span>
+		
+		<Keywords color="Objects">
+			
+			<Word>procedure</Word>
+			<Word>interface</Word>
+			<Word>const</Word>
+			<Word>begin</Word>
+			<Word>end</Word>
+			<Word>var</Word>
+			<Word>record</Word>
+			
+			<Word>with</Word>
+			<Word>do</Word>
+			
+			<Word>WORD</Word>
+			<Word>DWORD</Word>
+			<Word>HResult</Word>
+		
+		</Keywords>
+		
+		<Keywords color="Punctuation">
+			<Word>(</Word>
+			<Word>)</Word>
+		</Keywords>
+		
+		<Keywords color="Operators">
+			<Word>:=</Word>
+			<Word>=</Word>
+			<Word>+</Word>
+			<Word>-</Word>
+			<Word>*</Word>
+			<Word>;</Word>
+		</Keywords>
+		
+		<Span color="Objects" begin="\&#x5B;" end="\&#x5D;">
+			<RuleSet ignoreCase="false">
+				<Keywords fontWeight="bold">
+					<Word>Setup</Word>
+					<Word>Types</Word>
+					<Word>Components</Word>
+					<Word>Tasks</Word>
+					<Word>Dirs</Word>
+					<Word>Files</Word>
+					<Word>Icons</Word>
+					<Word>INI</Word>
+					<Word>InstallDelete</Word>
+					<Word>Languages</Word>
+					<Word>Messages</Word>
+					<Word>CustomMessages</Word>
+					<Word>LangOptions</Word>
+					<Word>Registry</Word>
+					<Word>Run</Word>
+					<Word>UninstallDelete</Word>
+					<Word>UninstallRun</Word>
+				</Keywords>
+			</RuleSet>
+		</Span>
+		
+		<Import ruleSet="SectionFiles" />
+		<Import ruleSet="SectionSetup" />
+		
+		<Span color="String"		begin="&quot;" end="&quot;" multiline="true" />
+		<Span color="String"		begin="&dblquot;" end="&dblquot;" multiline="true" />
+	
+	</RuleSet>
+	
+	<RuleSet name="SectionFiles">
+		<Rule color="Mark">Name|Source|Description|DestDir|DestName|Excludes|ExternalSize|CopyMode|Attribs|StrongAssemblyName|Permissions|FontInstall</Rule>
+	</RuleSet>
+	
+	<RuleSet name="SectionSetup">
+		<Keywords color="Mark" fontWeight="bold">
+			<Word>AllowCancelDuringInstall</Word>
+			<Word>AllowNetworkDrive</Word>
+			<Word>AllowNoIcons</Word>
+			<Word>AllowRootDirectory</Word>
+			<Word>AllowUNCPath</Word>
+			<Word>AlwaysCreateUninstallIcon</Word>
+			<Word>AlwaysRestart</Word>
+			<Word>AlwaysShowComponentList</Word>
+			<Word>AlwaysShowDirOnReadyPage</Word>
+			<Word>AlwaysShowGroupOnReadyPage</Word>
+			<Word>AlwaysUsePersonalGroup</Word>
+			<Word>AppComments</Word>
+			<Word>AppContact</Word>
+			<Word>AppCopyright</Word>
+			<Word>AppendDefaultDirName</Word>
+			<Word>AppId</Word>
+			<Word>AppModifyPath</Word>
+			<Word>AppMutex</Word>
+			<Word>AppName</Word>
+			<Word>AppPublisher</Word>
+			<Word>AppPublisherURL</Word>
+			<Word>AppReadmeFile</Word>
+			<Word>AppSupportPhone</Word>
+			<Word>AppSupportURL</Word>
+			<Word>AppUpdatesURL</Word>
+			<Word>AppVerName</Word>
+			<Word>AppVersion</Word>
+			<Word>ArchitecturesAllowed</Word>
+			<Word>ArchitecturesInstallIn64BitMode</Word>
+			<Word>BackColor</Word>
+			<Word>BackColorDirection</Word>
+			<Word>BackSolid</Word>
+			<Word>ChangesAssociations</Word>
+			<Word>ChangesEnvironment</Word>
+			<Word>CloseApplications</Word>
+			<Word>CloseApplicationsFilter</Word>
+			<Word>Compression</Word>
+			<Word>CompressionThreads</Word>
+			<Word>CreateAppDir</Word>
+			<Word>CreateUninstallRegKey</Word>
+			<Word>DefaultDialogFontName</Word>
+			<Word>DefaultDirName</Word>
+			<Word>DefaultGroupName</Word>
+			<Word>DefaultUserInfoName</Word>
+			<Word>DefaultUserInfoOrg</Word>
+			<Word>DefaultUserInfoSerial</Word>
+			<Word>DirExistsWarning</Word>
+			<Word>DisableAppendDir</Word>
+			<Word>DisableDirPage</Word>
+			<Word>DisableFinishedPage</Word>
+			<Word>DisableProgramGroupPage</Word>
+			<Word>DisableReadyMemo</Word>
+			<Word>DisableReadyPage</Word>
+			<Word>DisableStartupPrompt</Word>
+			<Word>DisableWelcomePage</Word>
+			<Word>DiskClusterSize</Word>
+			<Word>DiskSliceSize</Word>
+			<Word>DiskSpanning</Word>
+			<Word>DontMergeDuplicateFiles</Word>
+			<Word>EnableDirDoesntExistWarning</Word>
+			<Word>Encryption</Word>
+			<Word>ExtraDiskSpaceRequired</Word>
+			<Word>FlatComponentsList</Word>
+			<Word>InfoAfterFile</Word>
+			<Word>InfoBeforeFile</Word>
+			<Word>InternalCompressLevel</Word>
+			<Word>LanguageDetectionMethod</Word>
+			<Word>LicenseFile</Word>
+			<Word>LZMAAlgorithm</Word>
+			<Word>LZMABlockSize</Word>
+			<Word>LZMADictionarySize</Word>
+			<Word>LZMAMatchFinder</Word>
+			<Word>LZMANumBlockThreads</Word>
+			<Word>LZMANumFastBytes</Word>
+			<Word>LZMAUseSeparateProcess</Word>
+			<Word>MergeDuplicateFiles</Word>
+			<Word>MessagesFile</Word>
+			<Word>MinVersion</Word>
+		</Keywords>
+	</RuleSet>
+
+</SyntaxDefinition>

@@ -1,0 +1,42 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<LinearGradientBrush x:Key="grad_HeaderedContentControl_Header" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="{DynamicResource ColorHeaderDark}" Offset="1"/>
+		<GradientStop Color="{DynamicResource ColorHeaderLight}"/>
+		<GradientStop Color="{DynamicResource ColorHeaderMid}" Offset="0.5"/>
+	</LinearGradientBrush>
+	<!--<LinearGradientBrush x:Key="grad_HeaderedContentControl_Header_Valid" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="{DynamicResource ColorHeaderDark}" Offset="0.996"/>
+		<GradientStop Color="{DynamicResource ColorHeaderLight}"/>
+		<GradientStop Color="{DynamicResource ColorHeaderMid}" Offset="0.5"/>
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="grad_HeaderedContentControl_Header_InvalidFocused" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="{DynamicResource ColorHeaderDark}" Offset="1"/>
+		<GradientStop Color="{DynamicResource ColorHeaderLight}"/>
+		<GradientStop Color="{DynamicResource ColorHeaderMid}" Offset="0.484"/>
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="grad_HeaderedContentControl_Header_InvalidUnfocused" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="{DynamicResource ColorHeaderDarkAlt}" Offset="1"/>
+		<GradientStop Color="{DynamicResource ColorHeaderLight}"/>
+		<GradientStop Color="{DynamicResource ColorHeaderMid}" Offset="0.5"/>
+	</LinearGradientBrush>-->
+	<LinearGradientBrush x:Key="grad_HeaderedContentControl_Content" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="{DynamicResource ColorHeaderDark}"/>
+		<GradientStop Color="{DynamicResource ColorHeaderLight}" Offset="1"/>
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="grad_HeaderedContentControl_Content_Valid" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}"/>
+		<GradientStop Color="{DynamicResource ColorHeaderLight}" Offset="1"/>
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="grad_HeaderedContentControl_Content_InvalidFocused" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="{DynamicResource ColorHeaderLightInvalid}"/>
+		<GradientStop Color="{DynamicResource color_HeaderFocused_Light}" Offset="1"/>
+		<GradientStop Color="{DynamicResource color_HeaderFocused_Middle}" Offset="0.541"/>
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="grad_HeaderedContentControl_Content_InvalidUnfocused" EndPoint="0.5,1" StartPoint="0.5,0">
+		<GradientStop Color="{DynamicResource ColorHeaderDark}"/>
+		<GradientStop Color="{DynamicResource ColorHeaderLightInvalid}" Offset="1"/>
+	</LinearGradientBrush>
+	<!-- Resource dictionary entries should be defined here. -->
+</ResourceDictionary>

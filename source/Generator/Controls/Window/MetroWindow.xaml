@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Fluent:MetroWindow x:Class="Generator.Window1" Title="Generator" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit" xmlns:ad="clr-namespace:AvalonDock;assembly=AvalonDock" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:forms="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms" xmlns:wform="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration" xmlns:map="clr-namespace:Generator.Elements;assembly=Generator.Lib" xmlns:cls="clr-namespace:Generator.Classes" xmlns:local="clr-namespace:Generator" xmlns:gen="clr-namespace:Generator.Controls" xmlns:Fluent="clr-namespace:Fluent;assembly=Fluent" xmlns:content="clr-namespace:Generator.Content" Foreground="White" ResizeMode="CanResizeWithGrip" RibbonThemeColor="#ffa6cd5f" WindowStyle="SingleBorderWindow" Width="800" Height="500" SnapsToDevicePixels="True" UseLayoutRounding="True">
+	<Fluent:MetroWindow.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/Fluent;Component/Themes/Metro/White.xaml" />
+				<ResourceDictionary Source="/FirstFloor.ModernUI;component/Assets/ModernUI.xaml" />
+				<ResourceDictionary Source="/FirstFloor.ModernUI;component/Assets/ModernUI.Light.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</Fluent:MetroWindow.Resources>
+	<DockPanel LastChildFill="True">
+		<!--  -->
+		<gen:WindowRibbon x:Name="ribbon" DockPanel.Dock="Top" />
+		<!-- Background="White"  -->
+		<DockPanel>
+			<Grid>
+				<!--  -->
+				<TabControl HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+					<TabItem Header="Tree" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+						<wform:WindowsFormsHost HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+							<gen:UcDataTreeForm Dock="Fill" x:Name="treeMain" />
+						</wform:WindowsFormsHost>
+					</TabItem>
+					<TabItem Header="Temp">
+						<content:SelectionPane x:Name="paneSelection" Title="Config" />
+					</TabItem>
+				</TabControl>
+				<!--  -->
+				<GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" />
+				<!-- Main Editor Panel -->
+				<TabControl x:Name="tabCtl" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+					<TabItem x:Name="tabEdit" Header="Configuration">
+						<gen:DataEditor x:Name="ucSpec" />
+					</TabItem>
+					<TabItem x:Name="tabTpl" Header="Templates">
+						<local:TemplateEditor x:Name="ucAvalonEditor" />
+					</TabItem>
+					<TabItem x:Name="tabSql" Header="SQL">
+						<gen:SqlEditor x:Name="ucSql" />
+					</TabItem>
+				</TabControl>
+				<!--  -->
+				<Fluent:StatusBar Grid.Row="1" Grid.ColumnSpan="3">
+					<Fluent:StatusBarItem HorizontalAlignment="Left">
+						<StackPanel Orientation="Horizontal">
+							<TextBlock Text="Data-File Path: " />
+							<ContentControl>
+								<Hyperlink>
+									<TextBlock x:Name="htCurrentDataPath" />
+								</Hyperlink>
+							</ContentControl>
+						</StackPanel>
+					</Fluent:StatusBarItem>
+					<!--<Separator HorizontalAlignment="Left" />-->
+					<Fluent:StatusBarItem HorizontalAlignment="Left">
+						<StackPanel Orientation="Horizontal">
+							<TextBlock Text="Data-Config: " />
+							<ContentControl>
+								<Hyperlink>
+									<TextBlock x:Name="htCurrentDataFile" />
+								</Hyperlink>
+							</ContentControl>
+						</StackPanel>
+					</Fluent:StatusBarItem>
+					<!--<Separator HorizontalAlignment="Left" />-->
+					<Fluent:StatusBarItem HorizontalAlignment="Left">
+						<StackPanel Orientation="Horizontal">
+							<TextBlock Text="Template-Config: " />
+							<ContentControl>
+								<Hyperlink>
+									<TextBlock x:Name="htCurrentTemplateFile" />
+								</Hyperlink>
+							</ContentControl>
+						</StackPanel>
+					</Fluent:StatusBarItem>
+				</Fluent:StatusBar>
+				<!--  -->
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="240" MinWidth="240" />
+					<ColumnDefinition Width="3" />
+					<ColumnDefinition Width="*" MinWidth="0" />
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="*" />
+					<RowDefinition Height="20" />
+				</Grid.RowDefinitions>
+			</Grid>
+		</DockPanel>
+	</DockPanel>
+</Fluent:MetroWindow>
