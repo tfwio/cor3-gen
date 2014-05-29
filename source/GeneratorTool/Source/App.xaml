@@ -34,7 +34,7 @@
 								<Trigger Property="IsExpanded" Value="True">
 									<!--<Setter TargetName="HeaderSite" Property="Background" Value="Gold" />-->
 									<Setter TargetName="ExpandSite" Property="Visibility" Value="Visible" />
-									<Setter TargetName="HeaderSite" Property="TextElement.FontSize" Value="48" />
+									<!--<Setter TargetName="HeaderSite" Property="TextElement.FontSize" Value="48" />-->
 								</Trigger>
 								<Trigger Property="IsEnabled" Value="False">
 									<Setter Property="TextElement.Foreground" Value="{DynamicResource DisabledTextBrush}" />
