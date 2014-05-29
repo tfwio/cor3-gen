@@ -56,7 +56,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AvalonDock">
-      <HintPath>build\AssemblyReferences\AvalonDock.dll</HintPath>
+      <HintPath>..\..\project\packages\AvalonDock.Unofficial.1.3.1\lib\net40\AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="AvalonDock.Themes">
+      <HintPath>..\..\project\packages\AvalonDock.Unofficial.1.3.1\lib\net40\AvalonDock.Themes.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\..\Project\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
@@ -136,53 +139,12 @@
     <Page Include="Source\Views\TemplateContent\CreateTemplateDialog.xaml" />
     <Page Include="Source\Views\WriterTemplateControl.xaml" />
     <Page Include="Source\Views\WriterTplContent\NewWriterTemplateControl.xaml" />
-    <Resource Include="Source\Assets\Typo\Droid Sans 700.ttf" />
-    <Resource Include="Source\Assets\Typo\Droid Sans regular.ttf" />
-    <Resource Include="Source\Assets\Typo\Lato 100.ttf" />
-    <Resource Include="Source\Assets\Typo\Lato 100italic.ttf" />
-    <Resource Include="Source\Assets\Typo\Lato 300.ttf" />
-    <Resource Include="Source\Assets\Typo\Lato 300italic.ttf" />
-    <Resource Include="Source\Assets\Typo\Lato 700.ttf" />
-    <Resource Include="Source\Assets\Typo\Lato 700italic.ttf" />
-    <Resource Include="Source\Assets\Typo\Lato 900.ttf" />
-    <Resource Include="Source\Assets\Typo\Lato 900italic.ttf" />
-    <Resource Include="Source\Assets\Typo\Lato italic.ttf" />
-    <Resource Include="Source\Assets\Typo\Lato regular.ttf" />
-    <Resource Include="Source\Assets\Typo\Oxygen 300.ttf" />
-    <Resource Include="Source\Assets\Typo\Oxygen 700.ttf" />
-    <Resource Include="Source\Assets\Typo\Oxygen regular.ttf" />
     <EmbeddedResource Include="Source\Assets\Styles\Sql.xshd" />
     <Resource Include="Source\Assets\Icons\Actions-edit-find.ico" />
     <Resource Include="Source\Assets\Icons\appbar.shuffle.ico" />
     <Resource Include="Source\Assets\Icons\appbar.shuffle.png" />
     <Resource Include="Source\Assets\Icons\code-variable.png" />
     <None Include="Source\Assets\Icons\speaker_tosort.ico" />
-    <None Include="Source\Assets\Typo\Roboto 100.ttf" />
-    <None Include="Source\Assets\Typo\Roboto 100italic.ttf" />
-    <None Include="Source\Assets\Typo\Roboto 300.ttf" />
-    <None Include="Source\Assets\Typo\Roboto 300italic.ttf" />
-    <None Include="Source\Assets\Typo\Roboto 500.ttf" />
-    <None Include="Source\Assets\Typo\Roboto 500italic.ttf" />
-    <None Include="Source\Assets\Typo\Roboto 700.ttf" />
-    <None Include="Source\Assets\Typo\Roboto 700italic.ttf" />
-    <Resource Include="Source\Assets\Typo\Roboto 900.ttf" />
-    <Resource Include="Source\Assets\Typo\Roboto 900italic.ttf" />
-    <None Include="Source\Assets\Typo\Roboto Condensed 300.ttf" />
-    <None Include="Source\Assets\Typo\Roboto Condensed 300italic.ttf" />
-    <None Include="Source\Assets\Typo\Roboto Condensed 700.ttf" />
-    <None Include="Source\Assets\Typo\Roboto Condensed 700italic.ttf" />
-    <None Include="Source\Assets\Typo\Roboto Condensed italic.ttf" />
-    <Resource Include="Source\Assets\Typo\Roboto Condensed regular.ttf" />
-    <Resource Include="Source\Assets\Typo\Roboto italic.ttf" />
-    <Resource Include="Source\Assets\Typo\Roboto regular.ttf" />
-    <Resource Include="Source\Assets\Typo\Roboto Slab 100.ttf" />
-    <Resource Include="Source\Assets\Typo\Roboto Slab 300.ttf" />
-    <Resource Include="Source\Assets\Typo\Roboto Slab 700.ttf" />
-    <Resource Include="Source\Assets\Typo\Roboto Slab regular.ttf" />
-    <None Include="x64\SQLite.Interop.dll" />
-    <None Include="x86\SQLite.Interop.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <Page Include="Source\Assets\Styles\GlobalTheme.xaml" />
     <Page Include="Source\Assets\Styles\mui.xaml" />
     <Page Include="Source\App.xaml" />
@@ -348,7 +310,6 @@
   <ItemGroup>
     <Folder Include="Source\Assets" />
     <Folder Include="Source\Assets\Styles" />
-    <Folder Include="Source\Assets\Typo" />
     <Folder Include="Source\Models\Unused" />
     <Folder Include="Source\Models" />
     <Folder Include="Source\Models\Generator" />
