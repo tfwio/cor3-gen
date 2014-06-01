@@ -1,24 +1,18 @@
-# GENERATOR/GENERATOR-LIB README
+# GeneratorTool
 
-Please note that this project was written out of the inspired need to generate
-code IMMEDIATELY.  Its general status is that of a semi-working prototype with
-little to no (promise of) documentation as of yet.
+This project was written out of the inspired need to generate code IMMEDIATELY—which
+means that the inception point of this program was simply for a data-admin familiar/proficient
+in CSharp.NET data semantics and WPF binding.
+In other words, it was a work in progress and became stable within the condition
+that you know how the application works, or proficient enough a programmer to get this working.
 
-It was a side-project I rushed and eventually consolidated quite a bit --- but not
-enough ;p
-
-A general re-write is in order; hence you might think of this as a prototype for
-educational reasons and/or pre-release phase.
+[issue #4](https://github.com/tfwio/cor3-gen/issues/4)
+The application is not yet quite prepared for public domain release primarily due to my withholding
+the configuration files which generally put the application into action.
 
 ## REFERENCE ASSEMBLY NOTES
 
-* The project depends on local/cor3 includes from several areas
-* [Fluent.Ribbon](http://fluent.codeplex.com) featuring the beta metro theme via Mercurial.Hg
-* [FirstFloor.ModernUI](http://mui.codeplex.com) via Nuget
-* ICSharpCode.AvalonEdit and ICSharpCode.SharpDevelop.Widgets (binary dlls can be obtained from a local install of Sharp Develop)
-* Some themes might still be left over having been borrowed from AvalonDock
-* Images from various sources in [System.Cor3.Stock].
-    * FamFamFam: Silky icons
-    * GlyFx
-    * Oxygen Icons
-    * Variations of the Oxygen Icon set
+* [ModernUI for WPF](http://www.nuget.org/packages/ModernUI.WPF/) by [kozw](http://www.nuget.org/profiles/kozw/) via Nuget; See: [mui.codeplex.com](http://mui.codeplex.com)
+* [ICSharpCode.AvalonEdit](https://github.com/icsharpcode/SharpDevelop/tree/master/src/Libraries/AvalonEdit/ICSharpCode.AvalonEdit), `ICSharpCode.SharpDevelop.Widgets`, and other SD binaries.  What I did was implement the zoom-widget as it is implemented by SharpDevelop.
+* [An unofficial packaging of AvalonDock](http://www.nuget.org/packages/AvalonDock.Unofficial/) By: vitaminSP
+* [cor3.stock](https://github.com/tfwio/cor3.stock) images, contains Oxygen Icons, Variations of the Oxygen Icon set, and other images I might not have properly attributed as of yet...
