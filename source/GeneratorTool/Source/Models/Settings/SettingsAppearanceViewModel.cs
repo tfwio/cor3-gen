@@ -118,7 +118,7 @@ namespace GeneratorTool.Views
                 if (this.selectedTheme != value) {
                     this.selectedTheme = value;
                     OnPropertyChanged("SelectedTheme");
-
+                    LocalMuiSettings.MuiTheme=value.Source.ToString();
                     // and update the actual theme
                     AppearanceManager.Current.ThemeSource = value.Source;
                 }
@@ -133,7 +133,7 @@ namespace GeneratorTool.Views
                 if (this.selectedFontSize != value) {
                     this.selectedFontSize = value;
                     OnPropertyChanged("SelectedFontSize");
-
+                    LocalMuiSettings.MuiFontSize=value;
                     AppearanceManager.Current.FontSize = value == FontLarge ? FontSize.Large : FontSize.Small;
                 }
             }
@@ -147,7 +147,7 @@ namespace GeneratorTool.Views
                 if (this.selectedAccentColor != value) {
                     this.selectedAccentColor = value;
                     OnPropertyChanged("SelectedAccentColor");
-
+                    LocalMuiSettings.MuiColorTheme = ColorUtil.ColorToHex8(value);
                     AppearanceManager.Current.AccentColor = value;
                 }
             }

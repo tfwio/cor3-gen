@@ -86,16 +86,14 @@ namespace GeneratorTool.Views
 			if (!database.IsLoaded) return;
 			using (var db = new SQLiteDb(database.DataFile))
 			{
-				try {
-					data = db.Select("mytable", edit.Text, DBSelect,Adapt);
-					if (data.Tables.Count > 0) grid.ItemsSource = data.Tables["mytable"].DefaultView;
-				} catch{}
+				data = db.Select("mytable", edit.Text, DBSelect,Adapt);
+				if (data.Tables.Count > 0) grid.ItemsSource = data.Tables["mytable"].DefaultView;
 			}
 		}
 		void Event_CreateDb(object sender, RoutedEventArgs args)
 		{
 			database.Create();
-			if (!database.IsLoaded) 
+			if (!database.IsLoaded)
 			{
 				return;
 			}
@@ -103,7 +101,7 @@ namespace GeneratorTool.Views
 		void Event_OpenDb(object sender, RoutedEventArgs args)
 		{
 			database.Load();
-			if (!database.IsLoaded) 
+			if (!database.IsLoaded)
 			{
 				return;
 			}
@@ -111,7 +109,7 @@ namespace GeneratorTool.Views
 		void Event_OpenSQL(object sender, RoutedEventArgs args)
 		{
 			sqlFile.Load();
-			if (!sqlFile.IsLoaded) 
+			if (!sqlFile.IsLoaded)
 			{
 				return;
 			}

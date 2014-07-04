@@ -62,10 +62,10 @@
       <HintPath>..\..\project\packages\AvalonDock.Unofficial.1.3.1\lib\net40\AvalonDock.Themes.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework">
-      <HintPath>..\..\project\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\..\project\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\..\project\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\..\project\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="FirstFloor.ModernUI">
       <HintPath>..\..\Project\packages\ModernUI.WPF.1.0.5\lib\net45\FirstFloor.ModernUI.dll</HintPath>
@@ -85,9 +85,6 @@
     <Reference Include="ICSharpCode.SharpDevelop.Widgets">
       <HintPath>$(AsmRef)\ICSharpCode.SharpDevelop.Widgets.dll</HintPath>
     </Reference>
-    <Reference Include="ICSharpCode.TreeView">
-      <HintPath>build\AssemblyReferences\ICSharpCode.TreeView.dll</HintPath>
-    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="PresentationFramework.Aero" />
@@ -100,13 +97,13 @@
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Data.SQLite">
-      <HintPath>..\..\project\packages\System.Data.SQLite.Core.1.0.92.0\lib\net45\System.Data.SQLite.dll</HintPath>
+      <HintPath>..\..\project\packages\System.Data.SQLite.Core.1.0.93.0\lib\net45\System.Data.SQLite.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.SQLite.EF6">
-      <HintPath>..\..\project\packages\System.Data.SQLite.EF6.1.0.92.0\lib\net45\System.Data.SQLite.EF6.dll</HintPath>
+      <HintPath>..\..\project\packages\System.Data.SQLite.EF6.1.0.93.0\lib\net45\System.Data.SQLite.EF6.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.SQLite.Linq">
-      <HintPath>..\..\project\packages\System.Data.SQLite.Linq.1.0.92.0\lib\net45\System.Data.SQLite.Linq.dll</HintPath>
+      <HintPath>..\..\project\packages\System.Data.SQLite.Linq.1.0.93.0\lib\net45\System.Data.SQLite.Linq.dll</HintPath>
     </Reference>
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
@@ -122,8 +119,12 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="x64\SQLite.Interop.dll" />
-    <None Include="x86\SQLite.Interop.dll" />
+    <None Include="x64\SQLite.Interop.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="x86\SQLite.Interop.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <Resource Include="..\..\Source\Cor3.Stock\Images\Oxygen\kexi.png">
       <Link>Source\Assets\Icons\kexi.png</Link>
     </Resource>
@@ -179,6 +180,7 @@
       <SubType>Code</SubType>
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Source\Extensions\LocalMuiSettings.cs" />
     <Compile Include="Source\Views\DataContent\ViewContent.xaml.cs">
       <DependentUpon>ViewContent.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -309,28 +311,7 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Source\Assets" />
-    <Folder Include="Source\Assets\Styles" />
-    <Folder Include="Source\Models\Unused" />
-    <Folder Include="Source\Models" />
-    <Folder Include="Source\Models\Generator" />
-    <Folder Include="Source\Models\Settings" />
-    <Folder Include="Source\Models\SQLiteTool" />
-    <Folder Include="Source\Models\WriterTemplate" />
-    <Folder Include="Source\ViewExtensions" />
-    <Folder Include="Source\Views\DataContent" />
-    <Folder Include="Source\Controls\AvalonEditor" />
-    <Folder Include="Source\Models\Extensions" />
-    <Folder Include="Source\Controls" />
-    <Folder Include="Source\Commands" />
-    <Folder Include="Source\Views" />
-    <Folder Include="Source\Converters" />
-    <Folder Include="Source\Assets\Icons" />
-    <Folder Include="Source\Views\WriterTplContent" />
-    <Folder Include="Source\Views\TemplateContent" />
-    <Folder Include="Source\Views\SettingsContent" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="Resource.resx">
       <Generator>ResXFileCodeGenerator</Generator>

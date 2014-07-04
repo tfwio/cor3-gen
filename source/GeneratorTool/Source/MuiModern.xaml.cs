@@ -31,6 +31,7 @@ namespace GeneratorTool.Views
 		{
 			//FontFamily="/assets/typo/#Roboto 900"
 			InitializeComponent();
+			LocalMuiSettings.Assert();
 //			this.GetValue(DependencyObject
 			//System.Diagnostics.Debug.WriteLine("We have: {0}",this.);
 			mainLinks.Links.Add( new Link(){ DisplayName="GENERATOR", Source = new Uri("/generator",UriKind.RelativeOrAbsolute) });

@@ -13,3 +13,6 @@
 [submodule "source/cor3.stock"]
 	path = source/cor3.stock
 	url = https://github.com/tfoxo/cor3.stock
+[submodule "source/cor3.ext"]
+	path = source/cor3.ext
+	url = https://github.com/tfwio/cor3.ext

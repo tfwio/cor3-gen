@@ -90,10 +90,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
-      <HintPath>..\..\Project\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\..\project\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\..\Project\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\..\project\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="fam3">
       <HintPath>..\..\Source\Fam3\fam3.dll</HintPath>
@@ -101,8 +101,23 @@
     <Reference Include="FirstFloor.ModernUI">
       <HintPath>..\..\Project\packages\ModernUI.WPF.1.0.5\lib\net45\FirstFloor.ModernUI.dll</HintPath>
     </Reference>
+    <Reference Include="ICSharpCode.AvalonEdit">
+      <HintPath>..\..\project\asmref\ICSharpCode.AvalonEdit.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpDevelop">
+      <HintPath>..\..\project\asmref\ICSharpCode.SharpDevelop.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpDevelop.Dom">
+      <HintPath>..\..\project\asmref\ICSharpCode.SharpDevelop.Dom.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpDevelop.Sda">
+      <HintPath>..\..\project\asmref\ICSharpCode.SharpDevelop.Sda.dll</HintPath>
+    </Reference>
     <Reference Include="ICSharpCode.SharpDevelop.Widgets">
-      <HintPath>Build\Reference Assemblies\ICSharpCode.SharpDevelop.Widgets.dll</HintPath>
+      <HintPath>..\..\project\asmref\ICSharpCode.SharpDevelop.Widgets.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.TreeView">
+      <HintPath>..\..\project\asmref\ICSharpCode.TreeView.dll</HintPath>
     </Reference>
     <Reference Include="PresentationFramework.Aero">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
@@ -112,13 +127,13 @@
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Data.SQLite">
-      <HintPath>..\..\Project\packages\System.Data.SQLite.1.0.91.3\lib\net45\System.Data.SQLite.dll</HintPath>
+      <HintPath>..\..\project\packages\System.Data.SQLite.Core.1.0.93.0\lib\net45\System.Data.SQLite.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.SQLite.EF6">
-      <HintPath>..\..\Project\packages\System.Data.SQLite.1.0.91.3\lib\net45\System.Data.SQLite.EF6.dll</HintPath>
+      <HintPath>..\..\project\packages\System.Data.SQLite.EF6.1.0.93.0\lib\net45\System.Data.SQLite.EF6.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.SQLite.Linq">
-      <HintPath>..\..\Project\packages\System.Data.SQLite.1.0.91.3\lib\net45\System.Data.SQLite.Linq.dll</HintPath>
+      <HintPath>..\..\project\packages\System.Data.SQLite.Linq.1.0.93.0\lib\net45\System.Data.SQLite.Linq.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
@@ -149,14 +164,14 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\Source\Cor3.Extensions\Cor3Extensions\StringExtension.cs">
-      <Link>Includes\StringExtension.cs</Link>
-    </Compile>
     <Compile Include="..\..\Source\Cor3.Extensions\ResourceCollection.cs">
       <Link>Includes\ResourceCollection.cs</Link>
     </Compile>
     <Compile Include="..\..\Source\Cor3.Forms\Forms\WinTheme.cs">
       <Link>Includes\WinTheme.cs</Link>
+    </Compile>
+    <Compile Include="..\cor3.ext\Cor3Extensions\StringExtension.cs">
+      <Link>Includes\StringExtension.cs</Link>
     </Compile>
     <Compile Include="App.xaml.cs">
       <SubType>Code</SubType>
@@ -362,10 +377,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\CS_GIT.External\SharpDevelop\src\Libraries\AvalonEdit\ICSharpCode.AvalonEdit\ICSharpCode.AvalonEdit.csproj">
-      <Project>{6C55B776-26D4-4DB3-A6AB-87E783B2F3D1}</Project>
-      <Name>ICSharpCode.AvalonEdit</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\..\CS_Mercurial\fluent\Fluent\Fluent\Fluent dotNET 4.5.csproj">
       <Project>15705814-211D-4D66-9FB3-342547354ED0</Project>
       <Name>Fluent dotNET 4.5</Name>
