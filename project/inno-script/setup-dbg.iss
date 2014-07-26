@@ -23,7 +23,7 @@ DefaultDirName={pf}\Cor3 Generator Tool
 DefaultGroupName=Cor3 Generator
 AllowNoIcons=yes
 OutputDir=.\setup
-OutputBaseFilename=setup-cor3-gen-201407031501
+OutputBaseFilename=setup-cor3-gen-201407041259
 Compression=lzma
 SolidCompression=yes
 

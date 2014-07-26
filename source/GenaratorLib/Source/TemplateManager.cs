@@ -68,7 +68,7 @@ namespace Generator
 		
 		#region Event: UpdateDatabaseContextRequest
 		/// <summary></summary>
-		internal event EventHandler UpdateDatabaseContextRequest;
+		internal protected event EventHandler UpdateDatabaseContextRequest;
 
 		/// <summary></summary>
 		internal protected void OnUpdateDatabaseContextRequest()
@@ -80,7 +80,7 @@ namespace Generator
 		}
 
 		/// <summary></summary>
-		internal event EventHandler UpdateTemplateContextRequest;
+		internal protected event EventHandler UpdateTemplateContextRequest;
 
 		/// <summary></summary>
 		internal protected void OnUpdateTemplateContextRequest()

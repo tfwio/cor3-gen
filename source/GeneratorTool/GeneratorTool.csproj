@@ -180,6 +180,8 @@
       <SubType>Code</SubType>
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Source\Commands\DatabaseCreateCommand.cs" />
+    <Compile Include="Source\Commands\TableCreateCommand.cs" />
     <Compile Include="Source\Extensions\LocalMuiSettings.cs" />
     <Compile Include="Source\Views\DataContent\ViewContent.xaml.cs">
       <DependentUpon>ViewContent.xaml</DependentUpon>

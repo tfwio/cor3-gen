@@ -143,6 +143,8 @@
 					<MenuItem Header="Copy" />
 					<MenuItem Header="Paste" />
 					<Separator />
+					<MenuItem Header="Create Table" Command="{x:Static v:MoxiView.TableCreateCommand}" CommandParameter="{Binding .}" />
+					<Separator />
 					<MenuItem Header="Delete" />
 				</ContextMenu>
 			</StackPanel.ContextMenu>

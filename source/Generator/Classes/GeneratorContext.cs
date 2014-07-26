@@ -13,6 +13,7 @@ using System.Windows;
 using Generator.Export;
 using Generator.Elements;
 using Generator.Core.Markup;
+using Generator.Export.Intrinsic;
 
 #if WPF4
 using System.Collections.ObjectModel;

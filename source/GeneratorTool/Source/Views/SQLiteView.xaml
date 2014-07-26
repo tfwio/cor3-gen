@@ -13,20 +13,25 @@ xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://sc
         <DockPanel>
             <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="DB " />
-                <Button Content="CREATE DB" Click="Event_CreateDb" />
-                <Button Content="LOAD DB" Click="Event_OpenDb" />
-                <Button Content="UNLOAD DB" />
+                <Button FontSize="9" Content="CREATE" Click="Event_CreateDb" />
+                <Button FontSize="9" Content="LOAD" Click="Event_OpenDb" />
+                <Button FontSize="9" Content="CLOSE" />
                 <Separator Background="Transparent" BorderBrush="{x:Null}" Width="3" />
 
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="QUERY " />
-                <Button Content="EXECUTE (NonQuery)" Click="Event_ExecuteNonQuery" x:Name="btnNonQuery" />
-                <Button Content="EXECUTE (SELECT)" Click="Event_ExecuteSelectQuery" />
+                <Button FontSize="9" Content="EXEC" ToolTip="NO RESULTS!" Click="Event_ExecuteNonQuery" x:Name="btnNonQuery" />
+                <Button FontSize="9" Content="SELECT" ToolTip="...And show results" Click="Event_ExecuteSelectQuery" />
+                <Separator Background="Transparent" BorderBrush="{x:Null}" Width="3" />
+            	
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="PANEL " />
+                <Button FontSize="9" Content="DATA" Command="{x:Static c:SQLiteView.ToggleViewCommand}" />
+                <Button FontSize="9" Content="TEXT" Command="{x:Static c:SQLiteView.ToggleSqlCommand}" />
                 <Separator Background="Transparent" BorderBrush="{x:Null}" Width="3" />
 
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="SQL " />
-                <Button Content="LOAD" Command="{x:Static l:SQLFileLoader.LoadSqlFileCommand}" CommandParameter="{Binding ElementName=edit}" />
-                <Button Content="SAVE" Command="{x:Static l:SQLFileLoader.SaveSqlFileCommand}" CommandParameter="{Binding ElementName=edit}" />
-                <Button Content="SAVE AS" Command="{x:Static l:SQLFileLoader.SaveSqlFileAsCommand}" CommandParameter="{Binding ElementName=edit}" />
+                <Button FontSize="9" Content="LOAD" Command="{x:Static l:SQLFileLoader.LoadSqlFileCommand}" CommandParameter="{Binding ElementName=edit}" />
+                <Button FontSize="9" Content="SAVE" Command="{x:Static l:SQLFileLoader.SaveSqlFileCommand}" CommandParameter="{Binding ElementName=edit}" />
+                <Button FontSize="9" Content="SAVE AS" Command="{x:Static l:SQLFileLoader.SaveSqlFileAsCommand}" CommandParameter="{Binding ElementName=edit}" />
 
             </StackPanel>
             <TabControl x:Name="tabs" Background="Transparent" BorderBrush="Transparent">

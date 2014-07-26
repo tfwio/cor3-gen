@@ -87,6 +87,7 @@ namespace GeneratorTool.Views
 		static public readonly FieldPasteBelowCmd FieldPasteBelowCommand = new FieldPasteBelowCmd();
 		static public readonly TableCutCmd TableCutCommand = new TableCutCmd();
 		static public readonly TableCopyCmd TableCopyCommand = new TableCopyCmd();
+		static public readonly TableCreateCmd TableCreateCommand = new TableCreateCmd();
 		static public readonly TablePasteAboveCmd TablePasteAboveCommand = new TablePasteAboveCmd();
 		static public readonly TablePasteBelowCmd TablePasteBelowCommand = new TablePasteBelowCmd();
 		#endregion
@@ -205,6 +206,7 @@ namespace GeneratorTool.Views
 			FieldPasteAboveCommand.View = this;
 			FieldPasteBelowCommand.View = this;
 			TableCutCommand.View = this;
+			TableCreateCommand.View = this;
 			TableCopyCommand.View = this;
 			TablePasteAboveCommand.View = this;
 			TablePasteBelowCommand.View = this;

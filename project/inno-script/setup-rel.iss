@@ -23,7 +23,7 @@ DefaultDirName={pf}\Cor3 Generator Tool
 DefaultGroupName=Cor3 Generator
 AllowNoIcons=yes
 OutputDir=.\setup
-OutputBaseFilename=setup-cor3-gen-20140529
+OutputBaseFilename=setup-cor3-gen-201407041256
 Compression=lzma
 SolidCompression=yes
 
@@ -35,38 +35,7 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked; OnlyBelowVersion: 0,6.1
 
 [Files]
-Source: "D:\DEV\WIN\CS_ROOT\Projects\cor3.gen\source\GeneratorTool\bin\Release\GeneratorTool.exe"; DestDir: "{app}"; Flags: ignoreversion
-; NOTE: Don't use "Flags: ignoreversion" on any shared system files
-Source: "D:\DEV\WIN\CS_ROOT\Projects\cor3.gen\source\GeneratorTool\bin\Release\AvalonDock.pdb"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\DEV\WIN\CS_ROOT\Projects\cor3.gen\source\GeneratorTool\bin\Release\Generator.Lib.pdb"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\DEV\WIN\CS_ROOT\Projects\cor3.gen\source\GeneratorTool\bin\Release\System.Cor3.Data.pdb"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\DEV\WIN\CS_ROOT\Projects\cor3.gen\source\GeneratorTool\bin\Release\System.Cor3.pdb"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\DEV\WIN\CS_ROOT\Projects\cor3.gen\source\GeneratorTool\bin\Release\AvalonDock.xml"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\DEV\WIN\CS_ROOT\Projects\cor3.gen\source\GeneratorTool\bin\Release\EntityFramework.SqlServer.xml"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\DEV\WIN\CS_ROOT\Projects\cor3.gen\source\GeneratorTool\bin\Release\EntityFramework.xml"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\DEV\WIN\CS_ROOT\Projects\cor3.gen\source\GeneratorTool\bin\Release\FirstFloor.ModernUI.xml"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\DEV\WIN\CS_ROOT\Projects\cor3.gen\source\GeneratorTool\bin\Release\ICSharpCode.AvalonEdit.xml"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\DEV\WIN\CS_ROOT\Projects\cor3.gen\source\GeneratorTool\bin\Release\System.Data.SQLite.xml"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\DEV\WIN\CS_ROOT\Projects\cor3.gen\source\GeneratorTool\bin\Release\AvalonDock.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\DEV\WIN\CS_ROOT\Projects\cor3.gen\source\GeneratorTool\bin\Release\AvalonDock.Themes.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\DEV\WIN\CS_ROOT\Projects\cor3.gen\source\GeneratorTool\bin\Release\EntityFramework.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\DEV\WIN\CS_ROOT\Projects\cor3.gen\source\GeneratorTool\bin\Release\EntityFramework.SqlServer.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\DEV\WIN\CS_ROOT\Projects\cor3.gen\source\GeneratorTool\bin\Release\FirstFloor.ModernUI.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\DEV\WIN\CS_ROOT\Projects\cor3.gen\source\GeneratorTool\bin\Release\Generator.Lib.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\DEV\WIN\CS_ROOT\Projects\cor3.gen\source\GeneratorTool\bin\Release\ICSharpCode.AvalonEdit.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\DEV\WIN\CS_ROOT\Projects\cor3.gen\source\GeneratorTool\bin\Release\ICSharpCode.SharpDevelop.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\DEV\WIN\CS_ROOT\Projects\cor3.gen\source\GeneratorTool\bin\Release\ICSharpCode.SharpDevelop.Dom.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\DEV\WIN\CS_ROOT\Projects\cor3.gen\source\GeneratorTool\bin\Release\ICSharpCode.SharpDevelop.Sda.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\DEV\WIN\CS_ROOT\Projects\cor3.gen\source\GeneratorTool\bin\Release\ICSharpCode.SharpDevelop.Widgets.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\DEV\WIN\CS_ROOT\Projects\cor3.gen\source\GeneratorTool\bin\Release\System.Cor3.Data.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\DEV\WIN\CS_ROOT\Projects\cor3.gen\source\GeneratorTool\bin\Release\System.Cor3.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\DEV\WIN\CS_ROOT\Projects\cor3.gen\source\GeneratorTool\bin\Release\System.Cor3.Parsers.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\DEV\WIN\CS_ROOT\Projects\cor3.gen\source\GeneratorTool\bin\Release\System.Data.SQLite.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\DEV\WIN\CS_ROOT\Projects\cor3.gen\source\GeneratorTool\bin\Release\System.Data.SQLite.EF6.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\DEV\WIN\CS_ROOT\Projects\cor3.gen\source\GeneratorTool\bin\Release\System.Data.SQLite.Linq.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\DEV\WIN\CS_ROOT\Projects\cor3.gen\source\GeneratorTool\bin\Release\GeneratorTool.exe.config"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\DEV\WIN\CS_ROOT\Projects\cor3.gen\source\GeneratorTool\bin\Release\x64\SQLite.Interop.dll"; DestDir: "{app}\x64\"; Flags: ignoreversion
-Source: "D:\DEV\WIN\CS_ROOT\Projects\cor3.gen\source\GeneratorTool\bin\Release\x86\SQLite.Interop.dll"; DestDir: "{app}\x86\"; Flags: ignoreversion
+Source: "D:\DEV\WIN\CS_ROOT\Projects\cor3-gen\source\GeneratorTool\bin\Release\*"; DestDir: "{app}"; Flags: ignoreversion createallsubdirs recursesubdirs
 
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
