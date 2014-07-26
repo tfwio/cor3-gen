@@ -16,3 +16,6 @@
 [submodule "source/cor3.ext"]
 	path = source/cor3.ext
 	url = https://github.com/tfwio/cor3.ext
+[submodule "source/cor3.forms"]
+	path = source/cor3.forms
+	url = https://github.com/tfwio/cor3.forms
