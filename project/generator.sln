@@ -38,6 +38,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvalonDock", "..\..\..\CS_S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvalonDock.Themes (SharpDevelopThemes)", "..\..\..\CS_SVN.External\Codeplex\AvalonDock\Version1.3\AvalonDock.Themes\AvalonDock.Themes (SharpDevelopThemes).csproj", "{3836F4A8-4B35-4F5E-BB0F-DAD374297525}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gen", "..\source\gen\gen.csproj", "{22F89EAC-7C66-45CF-A55E-6D98853C5E8E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -96,6 +98,10 @@ Global
 		{3836F4A8-4B35-4F5E-BB0F-DAD374297525}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3836F4A8-4B35-4F5E-BB0F-DAD374297525}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3836F4A8-4B35-4F5E-BB0F-DAD374297525}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22F89EAC-7C66-45CF-A55E-6D98853C5E8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22F89EAC-7C66-45CF-A55E-6D98853C5E8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22F89EAC-7C66-45CF-A55E-6D98853C5E8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22F89EAC-7C66-45CF-A55E-6D98853C5E8E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
