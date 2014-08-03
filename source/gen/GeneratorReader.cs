@@ -121,28 +121,15 @@ namespace GeneratorApp
 			Model.Configuration = GeneratorConfig.Load(Model.FileName);
 			InitializeConfiguration(this, null);
 		}
-
+		const string NOUI = "noui";
 		#region RoutedEvents
-//		void LoadConfiguration(object o, /*Routed*/EventArgs a)
-//		{
-//			if (ofd.ShowDialog().Value) {
-//				//				try {
-//				Model = new GeneratorModel();
-//				Model.FileName = ofd.FileName;
-//				Model.Configuration = GeneratorConfig.Load(Model.FileName);
-//				InitializeConfiguration(o, a);
-////				a.Handled = true;
-//				//				} catch (Exception e) {
-//				//					throw e;
-//				//				} finally {
-//				if (LoadCompleteAction != null)
-//					LoadCompleteAction.Invoke();
-//				//				}
-//			}
-//		}
-
+		public void Initialize()
+		{
+			InitializeConfiguration(NOUI,null);
+		}
 		void InitializeConfiguration(object o, /*Routed*/EventArgs a)
 		{
+			if (o==NOUI) Model.Configuration = GeneratorConfig.Load(Model.FileName);
 			//			try {
 			Model.Databases = DatabaseCollection.Load(Model.Configuration.datafile);
 			Model.Templates = TemplateCollection.Load(Model.Configuration.templatefile);

@@ -14,69 +14,61 @@ namespace GeneratorApp
 	class GeneratorApplication : GeneratorApp.Commander
 	{
 		public GenSettings Settings {
-			get {
-				return settings;
+			get { return settings; }
+			set { settings = value; }
+		} GenSettings settings = new GenSettings();
+		
+		void Initialize()
+		{
+			if (Args.Contains("--help") || Args.Contains("-h")) {
+				Console.Write(RX.HELPSTRING);
+				return;
 			}
-			set {
-				settings = value;
+			if (Args.Contains("-gcfg"))
+			{
+				settings.HasConfigFile = true;
+				
+				string file = this.GetValue(true,"-gcfg");
+				Console.WriteLine("Reading input: {0}",string.IsNullOrEmpty(file) ? "error reading file" : file);
+				
+				if (file != null && File.Exists(file)) settings.GeneratorConfigurationFile = new FileInfo(file);
+				else throw new ArgumentException( "Error loading configuration file.", "GeneratorConfigurationFile", new FileNotFoundException());
+				
+				if (Args.Contains("-dbn")) settings.DatabaseName = this.GetValue(true,"-dbn");
+				if (Args.Contains("-tbln")) settings.TableName = this.GetValue(true,"-tbln");
+				if (Args.Contains("-tpln")) settings.TemplateName = this.GetValue(true,"-tpln");
+				if (Args.Contains("-o")) settings.OutputFile = this.GetValue(true,"-o");
 			}
 		}
-
-		GenSettings settings = new GenSettings();
-
+		
 		public GeneratorApplication(string[] args)
 		{
 			this.Args = new List<string>(args);
 			this.ArgsBackup = new List<string>(args);
+			Initialize();
 			
-			string tablename = "";
-			string templatename ="";
-			
-			if (Args.Contains("--help") || Args.Contains("-h"))
+			if (settings.HasConfigFile)
 			{
-				Console.Write(@"
-Generator Command Appliaction
-==========================================================
-
-There are two modes of operation in this application.
-
-Generator-Configuration-File Basis
-----------------------------------------------------------
-
-Here, a generator-configuraion file as its basis.  Here, you
-supply a path to your configuration-file and supply a name of
-the template you intend to use and a name for the generation
-process. 
-
-    gen -gcfg [gen-cfg] -tbln [table-name] -tpln [template-name]
-
-  -gcfg: (file)   Generator Configuration File
-  -tbln: (string) The name of the database->table
-  -tpln: (string) The name of the template.
-
-Generator-Configuration-File Basis
-----------------------------------------------------------
-
-options
-
-  -i  (file) input file
-  -o  (file) output file
-
-Via this mode, the input file would contain a quick data-config and
-also the Template and possibly even specify the output-file.
-");
-				return;
+				Console.Write(
+					RX.TEST_CONFIG
+						.Replace("{config}",	settings.GeneratorConfigurationFile.Name)
+						.Replace("{output}",	settings.OutputFile)
+						.Replace("{template}",	settings.TemplateName)
+						.Replace("{db}",		settings.DatabaseName)
+						.Replace("{table}",		settings.TableName)
+				);
+				var reader = new GeneratorReader();
+				reader.Model = new GeneratorModel(){ FileName = settings.GeneratorConfigurationFile.FullName };
+				reader.Initialize();
+				var output = reader.Generate(
+					reader.Model.Databases[settings.DatabaseName][settings.TableName],
+					reader.Model.Templates[settings.TemplateName]);
+				
+				File.WriteAllText(settings.OutputFile,output);
 			}
 			
-			if (this.HasFlag("-gcfg",false))
-			{
-				var file = this.GetValues("-gcfg").FirstOrDefault();
-				if (file != null && File.Exists(file)) settings.GeneratorConfigurationFile = new FileInfo(file);
-				else throw new ArgumentException( "Error loading configuration file.", "GeneratorConfigurationFile", new FileNotFoundException());
-			}
-			if (this.HasFlag("-tbln",false)) tablename = this.GetValues("-tbln").FirstOrDefault();
-			if (this.HasFlag("-tpln",false)) templatename = this.GetValues("-tpln").FirstOrDefault();
 		}
+
 	}
 }
 

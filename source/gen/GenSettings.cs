@@ -10,6 +10,32 @@ namespace GeneratorApp
 {
 	public class GenSettings
 	{
+		
+		public string OutputFile {
+			get;
+			set;
+		}
+		
+		public string TemplateName {
+			get;
+			set;
+		}
+		
+		public string TableName {
+			get;
+			set;
+		}
+		
+		public string DatabaseName {
+			get;
+			set;
+		}
+		
+		public bool HasConfigFile {
+			get;
+			set;
+		}
+		
 		public FileInfo GeneratorConfigurationFile {
 			get;
 			set;
