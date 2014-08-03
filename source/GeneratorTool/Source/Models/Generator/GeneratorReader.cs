@@ -1,5 +1,4 @@
-﻿/* oio * 01/21/2014 * Time: 09:09
- */
+﻿/* oio * 01/21/2014 * Time: 09:09 */
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
