@@ -10,19 +10,12 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Cor3.Parsers;
 using System.Data;
 using System.IO;
 using System.Linq;
-using System.Text.RegularExpressions;
-using System.Windows.Forms;
-using System.Windows.Media;
-using System.Xml;
 using System.Xml.Serialization;
 
-using Generator.Elements;
 using Generator.Parser;
-using Generator.Elements.Types;
 #endregion
 
 namespace Generator.Core.Markup

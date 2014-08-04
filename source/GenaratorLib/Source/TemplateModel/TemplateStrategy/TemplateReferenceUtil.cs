@@ -25,9 +25,7 @@ namespace Generator.Core.Markup
 		internal const string regex_delimitedMatch = @"\$\((\w+)\:([^\)]*)\)";
 		internal const string regex_fieldMatch = @"\$\((Table\w*|Field\w*)\:(?<innerElement>[^\)]+)\)";
 		internal const string regex_ioMatch = @"\$\((Directory\w*|File\w*)\:(?<innerElement>[^\)]+)\)";
-	//		internal const string regex_FieldAndIOMatch = @"\$\((set\w*|Table\w*|Field\w*|File\w*)\:(?<innerElement>[^\)]+)\)";
 		internal const string regex_FieldAndIOMatch = @"\$\((set\w*|print\w*|begin\w*|end\w*|Directory\w*|Table\w*|Field\w*)\:(?<innerElement>[^\)]+)\)";
-	
 		/// <summary>
 		/// Finds Tag-Regions (EG: “$(tag-name:varN,varN+1,…)within
 		/// a template matching all templates called by a single template.

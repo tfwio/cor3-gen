@@ -385,7 +385,10 @@ namespace Generator.Parser
 //			QuickMatch match0 = list[0];
 			Logger.LogC("\ttemplate factory","{0}",match.Value);
 			
-			if (!match.HasParams) { Logger.LogC("TemplateFactory.ConvertInput ERROR","No Params"); return tableOut/*continue*/; }
+			if (!match.HasParams) {
+				Logger.LogC("TemplateFactory.ConvertInput ERROR","No Params");
+				return tableOut/*continue*/;
+			}
 			
 			TableTemplate tbltmpl=null;
 			
@@ -418,7 +421,8 @@ namespace Generator.Parser
 				Logger.LogM( Strings.LogFactoryConvert_Title, "{0}", match.Params[0] );
 				
 				#endregion
-			} // the Directory Element is not parsed.
+			}
+			// the Directory Element is not parsed.
 			else if (match.Name=="Directory")
 			{
 				#region Directory
@@ -435,9 +439,9 @@ namespace Generator.Parser
 				
 				#endregion
 			}
+			// This is the main parser loop.
 			else
 			{
-				// This is the main parser loop.
 				// If we are here, we have a complex template;
 				// That is, our template references multiple tables.
 				#region Main Parser Section
@@ -483,7 +487,7 @@ namespace Generator.Parser
 		                                   string fieldTemplate,
 		                                   bool isForView)
 		{
-			// FIXME: Log Error
+			// UNDONE: Log Error
 			if (table==null) return tableTemplate;
 			
 			Logger.LogM( "template factory" , "Converting {0}" , table.Name );
