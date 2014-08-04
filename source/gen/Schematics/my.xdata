@@ -9,7 +9,7 @@
     // We're simply going to provide a list of categories that would end up
     // being the menu within the web-application, as well as the ASP.NET MVC4 Web-Application.
     // 
-    // So this will simply be a list of the libraries, and perhaps even their locations.
+    // So this will simply be a list of the libraries, and perhapse ven their locations.
     //-->
     <Table Name="books-menu" PrimaryKey="title" DbType="SQLite">
       <Field Tags="" DataType="TEXT" DataTypeNative="String" DataName="Library, Comic" IsArray="false" DefaultValue="DBNull.Value" />
@@ -18,7 +18,6 @@
       <Field Tags="" DataType="TEXT" DataTypeNative="String" DataName="Library, Fiction" IsArray="false" DefaultValue="DBNull.Value" />
       <Field Tags="" DataType="TEXT" DataTypeNative="String" DataName="Library, Mag" IsArray="false" DefaultValue="DBNull.Value" />
       <Field Tags="" DataType="TEXT" DataTypeNative="String" DataName="Library, New" IsArray="false" DefaultValue="DBNull.Value" />
-      <Field Tags="" DataType="TEXT" DataTypeNative="String" DataName="Library, She" IsArray="false" DefaultValue="DBNull.Value" />
       <Field Tags="" DataType="TEXT" DataTypeNative="String" DataName="Library, SSOC" IsArray="false" DefaultValue="DBNull.Value" />
       <Field Tags="" DataType="TEXT" DataTypeNative="String" DataName="Library, The" IsArray="false" DefaultValue="DBNull.Value" />
       <Field Tags="" DataType="TEXT" DataTypeNative="String" DataName="Library, Topical" IsArray="false" DefaultValue="DBNull.Value" />
