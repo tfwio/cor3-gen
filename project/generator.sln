@@ -1,9 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-# SharpDevelop 4.4
-VisualStudioVersion = 12.0.20827.3
-MinimumVisualStudioVersion = 10.0.40219.1
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+# SharpDevelop 4.2.0.8695-Beta 2
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "cor3", "cor3", "{FA2E76ED-477D-4F45-A1AE-49FA9251AE7F}"
 	ProjectSection(SolutionItems) = postProject
 	EndProjectSection
@@ -42,11 +40,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvalonDock.Themes (SharpDev
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generator.Lib", "..\source\GenaratorLib\Generator.Lib.csproj", "{FF8C58DF-784E-4818-A92C-150B8BD6B85E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneratorTool", "..\source\GeneratorTool\GeneratorTool.csproj", "{B29A02FB-0D40-401C-8005-2B2A6B86AFFA}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generator", "..\source\Generator\Generator.csproj", "{5D8AEAC7-0092-42A4-B06A-E72B11DEE263}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gen", "..\source\gen\gen.csproj", "{22F89EAC-7C66-45CF-A55E-6D98853C5E8E}"
+EndProject
+Project("") = "GeneratorTool", "..\source\GeneratorTool\GeneratorTool.csproj", "1D3DDAFF-3A69-485F-B451-6AF1493266EF"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -78,18 +76,6 @@ Global
 		{85AB9D2D-26E2-4536-B01C-8BA24E1F4615}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{85AB9D2D-26E2-4536-B01C-8BA24E1F4615}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{85AB9D2D-26E2-4536-B01C-8BA24E1F4615}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FF8C58DF-784E-4818-A92C-150B8BD6B85E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FF8C58DF-784E-4818-A92C-150B8BD6B85E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FF8C58DF-784E-4818-A92C-150B8BD6B85E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FF8C58DF-784E-4818-A92C-150B8BD6B85E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B29A02FB-0D40-401C-8005-2B2A6B86AFFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B29A02FB-0D40-401C-8005-2B2A6B86AFFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B29A02FB-0D40-401C-8005-2B2A6B86AFFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B29A02FB-0D40-401C-8005-2B2A6B86AFFA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5D8AEAC7-0092-42A4-B06A-E72B11DEE263}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5D8AEAC7-0092-42A4-B06A-E72B11DEE263}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5D8AEAC7-0092-42A4-B06A-E72B11DEE263}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5D8AEAC7-0092-42A4-B06A-E72B11DEE263}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4C92FCF4-3561-499F-BC5B-F2F089863047}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4C92FCF4-3561-499F-BC5B-F2F089863047}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C92FCF4-3561-499F-BC5B-F2F089863047}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -106,10 +92,22 @@ Global
 		{3836F4A8-4B35-4F5E-BB0F-DAD374297525}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3836F4A8-4B35-4F5E-BB0F-DAD374297525}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3836F4A8-4B35-4F5E-BB0F-DAD374297525}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF8C58DF-784E-4818-A92C-150B8BD6B85E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF8C58DF-784E-4818-A92C-150B8BD6B85E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF8C58DF-784E-4818-A92C-150B8BD6B85E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF8C58DF-784E-4818-A92C-150B8BD6B85E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D8AEAC7-0092-42A4-B06A-E72B11DEE263}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D8AEAC7-0092-42A4-B06A-E72B11DEE263}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D8AEAC7-0092-42A4-B06A-E72B11DEE263}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D8AEAC7-0092-42A4-B06A-E72B11DEE263}.Release|Any CPU.Build.0 = Release|Any CPU
 		{22F89EAC-7C66-45CF-A55E-6D98853C5E8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{22F89EAC-7C66-45CF-A55E-6D98853C5E8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22F89EAC-7C66-45CF-A55E-6D98853C5E8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22F89EAC-7C66-45CF-A55E-6D98853C5E8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		1D3DDAFF-3A69-485F-B451-6AF1493266EF.Debug|Any CPU.Build.0 = Debug|Any CPU
+		1D3DDAFF-3A69-485F-B451-6AF1493266EF.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		1D3DDAFF-3A69-485F-B451-6AF1493266EF.Release|Any CPU.Build.0 = Release|Any CPU
+		1D3DDAFF-3A69-485F-B451-6AF1493266EF.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
