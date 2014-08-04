@@ -200,6 +200,7 @@ namespace Generator.Core.Markup
 			Logger.LogY("table-template", "Checking template: ‘{0}’", this.Alias);
 			List<QuickMatch> matches = new List<QuickMatch>();
 			// note that table template contains field templates and their contained references.
+			// UNDONE: Itentify TableTemplateCdf
 			MatchCollection mc = TemplateReferenceUtil.ListTagsAndFiles(this.ElementTemplate);
 			if (mc==null) return matches;
 			foreach (Match match in mc)

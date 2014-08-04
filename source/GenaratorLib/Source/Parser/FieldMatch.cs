@@ -13,6 +13,7 @@ namespace Generator.Parser
 		FieldIf,
 		FieldTemplate,
 		TableTemplate,
+		TableTemplateCdf,
 		Set,
 		Print,
 		Begin,
@@ -79,6 +80,7 @@ namespace Generator.Parser
 						case "FieldIf": return FieldMatchType.FieldIf;
 						case "FieldTemplate": return FieldMatchType.FieldTemplate;
 						case "TableTemplate": return FieldMatchType.TableTemplate;
+						case "TableTemplateCdf": return FieldMatchType.TableTemplateCdf;
 						case "begin": return FieldMatchType.Begin;
 						case "end": return FieldMatchType.End;
 						case "set": return FieldMatchType.Set;

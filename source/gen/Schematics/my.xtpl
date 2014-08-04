@@ -5489,7 +5489,7 @@ EOT;
     <TableTemplate Name="new test item" Alias="js.calibre-models" Group="js.backbone">
       <ItemsTemplate>
 		this.set("$(DataName)",node[$(FieldIndex)]);</ItemsTemplate>
-      <ElementTemplate>$(TableTemplate: js.backbone-model.initialize,books,data,comments,authors,publishers,tags)</ElementTemplate>
+      <ElementTemplate>$(TableTemplate:js-backbone-iterator,books,data,comments,authors,publishers,tags)</ElementTemplate>
       <FieldTemplate Name="new test item">
         <ElementTemplate />
       </FieldTemplate>
@@ -5535,6 +5535,46 @@ using System.Data.SQLite;
 namespace BookApp.Models
 {$(TableTemplate: prime.struct.Class#2, books, data, comments, authors, books_authors_link, publishers, books_publishers_link, tags, books_tags_link)
 }</ElementTemplate>
+      <FieldTemplate Name="new test item">
+        <ElementTemplate />
+      </FieldTemplate>
+    </TableTemplate>
+    <TableTemplate Name="new test item" Alias="js.backbone-bootstrap-menu" Group="js.backbone">
+      <ItemsTemplate>
+            &lt;li&gt;&lt;a href="#/$(DataName)"&gt;$(DataName)&lt;/a&gt;&lt;/li&gt;</ItemsTemplate>
+      <ElementTemplate>
+          &lt;ul class="dropdown-menu" role="menu"&gt;$(FieldValues)
+          &lt;/ul&gt;</ElementTemplate>
+      <FieldTemplate Name="new test item">
+        <ElementTemplate />
+      </FieldTemplate>
+    </TableTemplate>
+    <TableTemplate Name="new test item" Alias="js.backbone-model-ini" Group="js.backbone">
+      <ItemsTemplate>
+		this.set("$(DataName)",node[$(FieldIndex)]);</ItemsTemplate>
+      <ElementTemplate>
+$(TableAliasCNameC)Model = Backbone.Model.extend({
+	defaults: function(){
+		return {$(TableTemplate: js.backbone-model, $(TableName))
+		};
+	},
+	fromArray: function(node){$(FieldValues)
+		console.log("set publishers model from data");
+		return this;
+	},
+	// the generated part.
+	initialize: function(node){
+		if (!node) this.fromArray(node);
+		return this;
+	}
+})</ElementTemplate>
+      <FieldTemplate Name="new test item">
+        <ElementTemplate />
+      </FieldTemplate>
+    </TableTemplate>
+    <TableTemplate Name="new test item" Alias="js-backbone-iterator" Group="js.backbone">
+      <ItemsTemplate>$(TableName)</ItemsTemplate>
+      <ElementTemplate>$(TableName)</ElementTemplate>
       <FieldTemplate Name="new test item">
         <ElementTemplate />
       </FieldTemplate>

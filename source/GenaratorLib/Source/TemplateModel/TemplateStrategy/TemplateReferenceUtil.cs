@@ -59,33 +59,34 @@ namespace Generator.Core.Markup
 		/// <param name="collection"></param>
 		/// <param name="templateName"></param>
 		/// <returns></returns>
-		static public List<QuickMatch> GetReferences(TemplateCollection collection, string templateName)
-		{
-			Logger.LogG("TemplateReferenceUtil","GetReferences");
-			List<QuickMatch> xlist = new List<QuickMatch>();
-	
-			// part 1: root tags
-			List<QuickMatch> list = null;
-			if (templateName==null) { list = new List<QuickMatch>(); }
-			else if (templateName==string.Empty) { list = new List<QuickMatch>(); }
-			else
-			{
-				Logger.LogG("TemplateReferenceUtil","GetReferences as we have a templateName");
-				list = collection[templateName].GetReferences();
-			}
-			// end of part one
-			
-			
-			// begin part two: find embedded template tags.
-			Logger.LogG("TemplateReferenceUtil","GetReferences will follow for referenced templates.");
-			foreach (QuickMatch match in collection[templateName].GetReferences())
-			{
-				List<QuickMatch> listB = GetReferences(collection, collection[match.Params[0]].Alias);
-				foreach (QuickMatch qm in listB) list.Add(qm);
-			}
-			Logger.LogG("TemplateReferenceUtil","GetReferences result: {0} Matches found.",list.Count);
-			return list;
-		}
+//		static public List<QuickMatch> GetReferences(TemplateCollection collection, string templateName)
+//		{
+//			Logger.LogG("TemplateReferenceUtil","GetReferences");
+//			List<QuickMatch> xlist = new List<QuickMatch>();
+//	
+//			// part 1: root tags
+//			// UNDONE: What is a root tag?  TableTemplate?
+//			List<QuickMatch> list = null;
+//			if (templateName==null) { list = new List<QuickMatch>(); }
+//			else if (templateName==string.Empty) { list = new List<QuickMatch>(); }
+//			else
+//			{
+//				Logger.LogG("TemplateReferenceUtil","GetReferences as we have a templateName");
+//				list = collection[templateName].GetReferences();
+//			}
+//			// end of part one
+//			
+//			
+//			// begin part two: find embedded template tags.
+//			Logger.LogG("TemplateReferenceUtil","GetReferences will follow for referenced templates.");
+//			foreach (QuickMatch match in collection[templateName].GetReferences())
+//			{
+//				List<QuickMatch> listB = GetReferences(collection, collection[match.Params[0]].Alias);
+//				foreach (QuickMatch qm in listB) list.Add(qm);
+//			}
+//			Logger.LogG("TemplateReferenceUtil","GetReferences result: {0} Matches found.",list.Count);
+//			return list;
+//		}
 	
 		/// <summary>
 		/// This call is used to find references to any Table* and Field* elements in tag ‘$([tag])’

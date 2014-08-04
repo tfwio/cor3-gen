@@ -30,6 +30,10 @@ namespace Generator.Core.Markup
 		[XmlAttribute,CategoryAttribute(groupDefault)]
 		public string Name { get { return name; } set { name = value; } }
 		
+		/// <summary>
+		/// Depending how this strategy is used, our Alias could be a TableTemplate
+		/// or target tag-name.
+		/// </summary>
 		[XmlAttribute,Category(groupDefault)]
 		public string Alias { get { return alias; } set { alias = value; } }
 		
