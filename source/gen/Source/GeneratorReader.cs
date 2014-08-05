@@ -1,9 +1,5 @@
-﻿/* oio * 8/2/2014 * Time: 2:03 PM
- */
+﻿/* oio * 8/2/2014 * Time: 2:03 PM */
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.IO;
 using System.Windows.Forms;
 using Generator;
 using Generator.Core.Markup;
@@ -85,7 +81,6 @@ namespace GeneratorApp
 		};
 
 		#endregion
-
 		#region Method: string Generate, IDbConfiguration4 GetConfig
 		public Generator.Export.Intrinsic.IDbConfiguration4 GetConfig(TableElement table, TableTemplate template)
 		{
@@ -121,15 +116,13 @@ namespace GeneratorApp
 			Model.Configuration = GeneratorConfig.Load(Model.FileName);
 			InitializeConfiguration(this, null);
 		}
-		const string NOUI = "noui";
 		#region RoutedEvents
 		public void Initialize()
 		{
-			InitializeConfiguration(NOUI,null);
+			InitializeConfiguration(null,null);
 		}
 		void InitializeConfiguration(object o, /*Routed*/EventArgs a)
 		{
-			if (o==NOUI) Model.Configuration = GeneratorConfig.Load(Model.FileName);
 			//			try {
 			Model.Databases = DatabaseCollection.Load(Model.Configuration.datafile);
 			Model.Templates = TemplateCollection.Load(Model.Configuration.templatefile);

@@ -11,7 +11,7 @@ namespace GeneratorApp
 	public class GenSettings
 	{
 		
-		public string OutputFile {
+		public string ReplacementTag {
 			get;
 			set;
 		}
@@ -32,31 +32,33 @@ namespace GeneratorApp
 		}
 		
 		public bool HasConfigFile {
+			get {
+				return (FileConfig != null);
+			}
+		}
+		public bool HasSchemaAndTemplate {
+			get { return (FileSchema != null) & (FileTemplates != null); }
+		}
+		
+		public FileInfo FileConfig {
+			get;
+			set;
+		}
+		public FileInfo FileTemplates {
+			get;
+			set;
+		}
+		public FileInfo FileSchema {
 			get;
 			set;
 		}
 		
-		public FileInfo GeneratorConfigurationFile {
+		
+		public FileInfo FileOut {
 			get;
 			set;
 		}
-
-		public FileInfo TemplatesFile {
-			get;
-			set;
-		}
-
-		public FileInfo SchemaFile {
-			get;
-			set;
-		}
-
-		GeneratorConfig GenConfiguration {
-			get;
-			set;
-		}
-
-		TemplateCollection TemplatesCollection {
+		public FileInfo FileIn {
 			get;
 			set;
 		}

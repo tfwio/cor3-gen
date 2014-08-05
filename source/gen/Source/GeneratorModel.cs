@@ -11,6 +11,15 @@ namespace GeneratorApp
 {
 	public class GeneratorModel : INotifyPropertyChanged
 	{
+		public GeneratorModel(string configFile)
+		{
+			Configuration = GeneratorConfig.Load(configFile);
+		}
+		public GeneratorModel(string fileSchematic, string fileTemplates)
+		{
+			Configuration = new GeneratorConfig(){datafile=fileSchematic,templatefile=fileTemplates};
+		}
+		
 		public string FileName {
 			get { return fileName; }
 			set { fileName = value; OnPropertyChanged("FileName"); }

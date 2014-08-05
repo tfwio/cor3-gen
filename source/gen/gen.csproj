@@ -8,7 +8,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>gen</RootNamespace>
     <AssemblyName>gen</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <NoWin32Manifest>False</NoWin32Manifest>
     <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
@@ -21,9 +21,10 @@
     <AssemblyOriginatorKeyFile>gen.snk</AssemblyOriginatorKeyFile>
     <DelaySign>False</DelaySign>
     <AssemblyOriginatorKeyMode>File</AssemblyOriginatorKeyMode>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <BaseAddress>4194304</BaseAddress>
     <RegisterForComInterop>False</RegisterForComInterop>
     <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
@@ -38,7 +39,7 @@
     <DefineConstants>DEBUG;TRACE;CONSOLE</DefineConstants>
     <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
     <StartAction>Project</StartAction>
-    <StartArguments>--help</StartArguments>
+    <StartArguments>gen -it "Schematics/my.xtpl" -is "Schematics/my.xdata"  -dbn "Calibre"  -tbln "books"  -tpln "js.calibre-models"  -o "model.js"</StartArguments>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -55,9 +56,6 @@
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Data.SQLite">
-      <HintPath>..\..\project\packages\System.Data.SQLite.Core.1.0.93.0\lib\net40\System.Data.SQLite.dll</HintPath>
-    </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -67,16 +65,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\cor3.core\System\System.DialogUtil.cs">
-      <Link>System.DialogUtil.cs</Link>
+      <Link>Source\System.DialogUtil.cs</Link>
     </Compile>
-    <Compile Include="Commander.cs" />
-    <Compile Include="GeneratorApplication.cs" />
-    <Compile Include="GeneratorModel.cs" />
-    <Compile Include="GeneratorReader.cs" />
-    <Compile Include="GenSettings.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RX.cs" />
+    <Compile Include="Source\Commander.cs" />
+    <Compile Include="Source\GeneratorApplication.cs" />
+    <Compile Include="Source\GeneratorModel.cs" />
+    <Compile Include="Source\GeneratorReader.cs" />
+    <Compile Include="Source\GenSettings.cs" />
+    <Compile Include="Source\Program.cs" />
+    <Compile Include="Source\RX.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -89,6 +87,9 @@
     </None>
     <None Include="Schematics\my.xtpl">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="test-multi.cmd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="test.cmd">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -105,6 +106,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Source" />
     <Folder Include="Schematics" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

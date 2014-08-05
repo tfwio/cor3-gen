@@ -5489,7 +5489,7 @@ EOT;
     <TableTemplate Name="new test item" Alias="js.calibre-models" Group="js.backbone">
       <ItemsTemplate>
 		this.set("$(DataName)",node[$(FieldIndex)]);</ItemsTemplate>
-      <ElementTemplate>$(TableTemplate:js-backbone-iterator,books,data,comments,authors,publishers,tags)</ElementTemplate>
+      <ElementTemplate>$(TableTemplate:js.backbone-model.initialize,books,data,comments,authors,publishers,tags)</ElementTemplate>
       <FieldTemplate Name="new test item">
         <ElementTemplate />
       </FieldTemplate>

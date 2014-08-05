@@ -25,20 +25,28 @@ namespace GeneratorApp
 	the template you intend to use and a name for the generation
 	process. 
 	
-	    gen -gcfg [gen-cfg] -tbln [table-name] -tpln [template-name]
+	note: round and square braces of course are not used in the command
+	
+	gen -gcfg ([gen-cfg] | -it [path] -is [path]) -tbln [table-name] -tpln [template-name] -i (file) -o (file)
 	
 	  -gcfg: (file)   Generator Configuration File
-	  -dbn:   (string) The name of the database
+	
+	if no generator-config, then supply the following two files...
+	  
+	  -it: (file) input template config *.xtpl
+	  -is: (file) input data-schematic config *.xdata
+	
+	the following pertain to information contained in configurations.
+	
+	  -dbn:   (string) The name of the database your specified table is in.
 	  -tbln: (string) The name of the database->table
 	  -tpln: (string) The name of the template.
 	
-	Generator-Configuration-File Basis
-	----------------------------------------------------------
-	
 	options
 	
-	  -i  (file) input file
-	  -o  (file) output file
+	  -i  (file) input file containing (see -r) input template.
+	  -o  (file) output file.
+	  -r  (string) a tag that is replaced in the (see -i) input file.
 	
 	Via this mode, the input file would contain a quick data-config and
 	also the Template and possibly even specify the output-file.
