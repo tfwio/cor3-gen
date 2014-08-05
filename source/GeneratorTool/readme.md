@@ -9,7 +9,7 @@ that you know how the application works, or proficient enough a programmer to ge
 [issue #4](https://github.com/tfwio/cor3-gen/issues/4)
 The application is not yet quite prepared for public domain release primarily due to my withholding the configuration files which generally put the application into action.
 
-Sample configuration files **have been added** within the `/source/gen/schematics` and now we have other excuses for not releasing yet---almost there!
+Sample configuration files **have been added** within the `../source/gen/schematics` ('gen' command-line project) and now we have other excuses for not releasing yet---almost there!
 
 ## REFERENCE ASSEMBLY NOTES
 
