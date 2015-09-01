@@ -20,7 +20,7 @@ namespace GeneratorApp
 		
 		const string emptyFile = "";
 		
-		FileInfo GetFile(string argument)
+		FileInfo GetFileFromArgument(string argument)
 		{
 			if (!Args.Contains(argument)) return null;
 			var val = GetValue(true,argument);
@@ -28,18 +28,39 @@ namespace GeneratorApp
 			return new FileInfo(val);
 		}
 		
+		int FirstNonSpace(string input)
+		{
+			int i=0;
+			while (true) {
+				if (char.IsWhiteSpace(input[i])) { i++; continue; }
+				break;
+			}
+			return i;
+		}
+//		string reformatToConsoleWindow(string input)
+//		{
+//			
+//		}
 		void Initialize()
 		{
 			if (Args.Contains("--help") || Args.Contains("-h")) {
+				int width = Console.BufferWidth;
+				using (var str = new StringReader(RX.HELPSTRING))
+				{
+					string line = str.ReadLine();
+					int firstChar = FirstNonSpace(line);
+					
+				}
 				Console.Write(RX.HELPSTRING);
 				return;
 			}
 			
-			settings.FileConfig = GetFile("-gcfg");
-			settings.FileTemplates = GetFile("-it");
-			settings.FileSchema = GetFile("-is");
-			settings.FileIn = GetFile("-i");
-			settings.FileOut = GetFile("-o");
+			settings.FileConfig = GetFileFromArgument("-gcfg");
+			settings.FileTemplates = GetFileFromArgument("-it");
+			settings.FileSchema = GetFileFromArgument("-is");
+			settings.JsonConfig = GetFileFromArgument("-ij");
+			settings.FileIn = GetFileFromArgument("-i");
+			settings.FileOut = GetFileFromArgument("-o");
 			
 			if (Args.Contains("-dbn")) settings.DatabaseName = this.GetValue(true,"-dbn");
 			if (Args.Contains("-tbln")) settings.TableName = this.GetValue(true,"-tbln");

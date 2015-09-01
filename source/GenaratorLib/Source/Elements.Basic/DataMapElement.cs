@@ -33,7 +33,6 @@ namespace Generator.Elements.Basic
 		internal Dictionary<string,object> _keydata = new Dictionary<string, object>();
 		public Dictionary<string, object> KeyData { get { return _keydata; } set { _keydata = value; } }
 		 */
-
 		/// <summary>
 		/// Get/Set
 		/// <para>for automation of conection process (I don't believe this is actually used).</para>

@@ -201,6 +201,7 @@ namespace Generator.Elements
 				fparams.Add("CleanName,Nodash",			DataName.Clean());
 				fparams.Add("FriendlyName",				DataName.Clean());
 				fparams.Add("CleanName",				DataName.Replace("-","_"));
+				fparams.Add("DataNameX",				DataName.Replace("-","_").ReplaceId());
 				fparams.Add("FriendlyNameC",			DataName.Clean().ToStringCapitolize());
 				#endregion
 				#region DataAlias (for links and views)

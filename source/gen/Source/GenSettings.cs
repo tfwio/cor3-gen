@@ -52,6 +52,10 @@ namespace GeneratorApp
 			get;
 			set;
 		}
+		public FileInfo JsonConfig {
+			get;
+			set;
+		}
 		
 		
 		public FileInfo FileOut {

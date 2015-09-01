@@ -13,14 +13,15 @@ namespace Generator.Elements
 	{
 		[XmlElement("file-data")] public string datafile;
 		[XmlElement("file-template")] public string templatefile;
+		[XmlElement("file-ex")] public string expressionfile;
 		
 		public class configuration
 		{
 			[XmlElement()] public string selectTable;
 			[XmlElement] public string selectTemplate;
+			[XmlElement] public string selectExpressions;
 			public configuration()
 			{
-				
 			}
 		}
 		[XmlElement("selection")] public configuration selection;

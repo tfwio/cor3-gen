@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-# SharpDevelop 5.0
+# SharpDevelop 5.1
 VisualStudioVersion = 12.0.20827.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "cor3", "cor3", "{FA2E76ED-477D-4F45-A1AE-49FA9251AE7F}"
@@ -39,6 +39,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generator", "..\source\Generator\Generator.csproj", "{5D8AEAC7-0092-42A4-B06A-E72B11DEE263}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gen", "..\source\gen\gen.csproj", "{22F89EAC-7C66-45CF-A55E-6D98853C5E8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "csgen", "..\source\csgen\csgen.csproj", "{4CC7DDC4-BD64-4F1A-8A28-1203E42FE69C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -102,6 +104,10 @@ Global
 		{22F89EAC-7C66-45CF-A55E-6D98853C5E8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22F89EAC-7C66-45CF-A55E-6D98853C5E8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22F89EAC-7C66-45CF-A55E-6D98853C5E8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CC7DDC4-BD64-4F1A-8A28-1203E42FE69C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CC7DDC4-BD64-4F1A-8A28-1203E42FE69C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CC7DDC4-BD64-4F1A-8A28-1203E42FE69C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CC7DDC4-BD64-4F1A-8A28-1203E42FE69C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -20,10 +20,7 @@ namespace GeneratorApp
 	Generator-Configuration-File Basis
 	----------------------------------------------------------
 	
-	Here, a generator-configuraion file as its basis.  Here, you
-	supply a path to your configuration-file and supply a name of
-	the template you intend to use and a name for the generation
-	process. 
+	Here, a generator-configuraion file as its basis.  Here, you supply a path to your configuration-file and supply a name of the template you intend to use and a name for the generation process. 
 	
 	note: round and square braces of course are not used in the command
 	
@@ -35,6 +32,9 @@ namespace GeneratorApp
 	  
 	  -it: (file) input template config *.xtpl
 	  -is: (file) input data-schematic config *.xdata
+	  -ij: (file) input data-schematic config *.json|*.gen
+                  - typically, a file named '.gen' would be created for this.
+                  - additionally, we use something like nodejs with a ""gen_cfg"" sub-directory.
 	
 	the following pertain to information contained in configurations.
 	

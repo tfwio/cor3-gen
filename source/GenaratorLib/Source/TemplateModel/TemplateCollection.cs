@@ -21,8 +21,7 @@ using Generator.Parser;
 namespace Generator.Core.Markup
 {
 	[XmlRoot("TemplateCollection")]//,Namespace="http://w3.tfw.co/xmlns/2011/templates"
-	public class TemplateCollection
-		: SerializableClass<TemplateCollection> //, INotifyPropertyChanged
+	public class TemplateCollection : SerializableClass<TemplateCollection> //, INotifyPropertyChanged
 	{
 		static public List<string> GetGroupNames(TemplateCollection collection)
 		{
@@ -84,8 +83,6 @@ namespace Generator.Core.Markup
 			}
 			return null;
 		}
-		
-
 		
 		public void GetTableValues(DataTable table)
 		{

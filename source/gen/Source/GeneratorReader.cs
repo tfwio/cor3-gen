@@ -6,11 +6,29 @@ using Generator.Core.Markup;
 using Generator.Elements;
 namespace GeneratorApp
 {
-	
+	public interface IGeneratorReader
+	{
+		Action InitializeCompleteAction { get; set; }
+		Action LoadCompleteAction { get; set; }
+		Action SaveCompleteAction { get; set; }
+		void Initialize();
+	}
+	public interface IGeneratorWriter
+	{
+		Action InitializeCompleteAction { get; set; }
+		Action LoadCompleteAction { get; set; }
+		Action SaveCompleteAction { get; set; }
+		void Initialize();
+	}
+	public class GeneratorJsonWriter
+	{
+		public DatabaseCollection DataConfiguration { get;set; }
+		public TemplateCollection Templates { get;set; }
+	}
 	/// <summary>
 	/// 
 	/// </summary>
-	public class GeneratorReader
+	public class GeneratorReader : IGeneratorReader
 	{
 		public GeneratorModel Model {
 			get;
@@ -18,20 +36,11 @@ namespace GeneratorApp
 		}
 
 		#region (static) ICommand
-		public Action InitializeCompleteAction {
-			get;
-			set;
-		}
+		public Action InitializeCompleteAction { get; set; }
 
-		public Action LoadCompleteAction {
-			get;
-			set;
-		}
+		public Action LoadCompleteAction { get; set; }
 
-		public Action SaveCompleteAction {
-			get;
-			set;
-		}
+		public Action SaveCompleteAction { get; set; }
 
 		public Action<string> TemplateGeneratedAction {
 			get;
@@ -94,10 +103,7 @@ namespace GeneratorApp
 			};
 		}
 
-		string GeneratedTemplate {
-			get;
-			set;
-		}
+		string GeneratedTemplate { get; set; }
 
 		public string Generate(TableElement tableName, TableTemplate templateName)
 		{
@@ -136,11 +142,7 @@ namespace GeneratorApp
 				InitializeCompleteAction.Invoke();
 			//			}
 		}
-
-
-
-		
-	#endregion
+		#endregion
 	}
 }
 

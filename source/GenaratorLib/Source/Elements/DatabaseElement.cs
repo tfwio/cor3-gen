@@ -10,7 +10,39 @@ using Generator.Elements.Types;
 #endif
 namespace Generator.Elements
 {
-
+	public class ExElement : DataMapElement, INotifyPropertyChanged
+	{
+		/*XmlElement here probably isn't serialized*/
+		[XmlAttribute] public string Name {
+			get { return name; } set { name = value; OnPropertyChanged("Name"); }
+		} [XmlElement("name")] string name;
+		/*XmlElement here probably isn't serialized*/
+		[XmlAttribute] public string Expression {
+			get { return expression; } set { expression = value; OnPropertyChanged("Expression"); }
+		} [XmlElement("name")] string expression;
+		
+		[XmlAttribute] public string Ex {
+			// build string.RegexReplace(// on @attr.replace
+			// unil last replace(,emty)
+			get { return expression; } set { expression = value; OnPropertyChanged("CalculatedExpression"); }
+		}
+		
+		List<ExElement> children;
+		public List<ExElement> Children {
+			get { return children; }
+			set { children = value;OnPropertyChanged("Expression"); }
+		}
+		public ExElement()
+		{
+		}
+		
+	}
+	public partial class ExpressionElement : DataMapElement, INotifyPropertyChanged
+	{
+		public ExpressionElement()
+		{
+		}
+	}
 	public partial class DatabaseElement : DataMapElement, INotifyPropertyChanged
 	{
 		public void Remove(DatabaseChildElement child)

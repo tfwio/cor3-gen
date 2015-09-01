@@ -24,7 +24,7 @@
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <BaseAddress>4194304</BaseAddress>
     <RegisterForComInterop>False</RegisterForComInterop>
     <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
@@ -39,7 +39,7 @@
     <DefineConstants>DEBUG;TRACE;CONSOLE</DefineConstants>
     <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
     <StartAction>Project</StartAction>
-    <StartArguments>gen -it "Schematics/my.xtpl" -is "Schematics/my.xdata"  -dbn "Calibre"  -tbln "books"  -tpln "js.calibre-models"  -o "model.js"</StartArguments>
+    <StartArguments>-i "D:\DEV\WIN\CS_ROOT\Projects\CalibreDataNET\source\Books\Source\Controllers\ApiController.cs.tpl" -o "D:\DEV\WIN\CS_ROOT\Projects\CalibreDataNET\source\Books\Source\Controllers\ApiController.cs" -r "__VALUES__" -is "D:\DEV\WWW\PUB\books\builder\gen\Schematics\my.xdata.xml" -it "D:\DEV\WWW\PUB\books\builder\gen\Schematics\my.xtpl.xml" -dbn "Calibre" -tbln "csharp-mvc"  -tpln "js.backbone-mvc"</StartArguments>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -50,7 +50,17 @@
     <DefineConstants>TRACE</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\project\packages\EntityFramework.6.1.2\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\project\packages\EntityFramework.6.1.2\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\project\packages\Newtonsoft.Json.6.0.5\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
