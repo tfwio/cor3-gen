@@ -1,3 +1,3 @@
 # OBSOLETE
 
-continued here: https://github.com/tfwio/libgen
+migrated to https://github.com/tfwio/gen
